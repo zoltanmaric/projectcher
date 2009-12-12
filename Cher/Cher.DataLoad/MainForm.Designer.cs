@@ -40,6 +40,7 @@
             this.btnQuick.TabIndex = 0;
             this.btnQuick.Text = "Quick";
             this.btnQuick.UseVisualStyleBackColor = true;
+            this.btnQuick.Click += new System.EventHandler(this.btnQuick_Click);
             // 
             // rtbResult
             // 
