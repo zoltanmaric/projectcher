@@ -1,0 +1,8 @@
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\bin\Debug\Cher.DataLoad.exe
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\bin\Debug\Cher.DataLoad.pdb
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\ResolveAssemblyReference.cache
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.MainForm.resources
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.Properties.Resources.resources
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.csproj.GenerateResource.Cache
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.exe
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.pdb
