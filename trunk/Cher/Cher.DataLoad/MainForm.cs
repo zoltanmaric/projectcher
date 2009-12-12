@@ -11,9 +11,18 @@ namespace Cher.DataLoad
 {
     public partial class MainForm : Form
     {
+        Loader loader;
+
         public MainForm()
         {
             InitializeComponent();
+
+            loader = new Loader();
+        }
+
+        private void btnQuick_Click(object sender, EventArgs e)
+        {
+            rtbResult.Text = loader.GetTagTopArtists("rock");
         }
     }
 }
