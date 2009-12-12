@@ -6,3 +6,4 @@ D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Ch
 D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.csproj.GenerateResource.Cache
 D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.exe
 D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.pdb
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\bin\Debug\lastfm-sharp.dll
