@@ -16,5 +16,5 @@ D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\C
 D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\bin\Debug\Cher.DataLoad.exe
 D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\bin\Debug\Cher.DataLoad.pdb
 D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\bin\Debug\lastfm-sharp.dll
-D:\Škola\FER\semestar9\Strojno uèenje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.exe
-D:\Škola\FER\semestar9\Strojno uèenje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.pdb
+D:\ï¿½kola\FER\semestar9\Strojno uï¿½enje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.exe
+D:\ï¿½kola\FER\semestar9\Strojno uï¿½enje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.pdb
