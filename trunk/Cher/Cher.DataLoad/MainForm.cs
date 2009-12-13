@@ -22,7 +22,11 @@ namespace Cher.DataLoad
 
         private void btnQuick_Click(object sender, EventArgs e)
         {
-            rtbResult.Text = loader.GetTagTopArtists("rock");
+            //rtbResult.Text = loader.GetTagsTopArtists("rock");
+            
+            rtbResult.Text = loader.GetUsersTopArtists("HankChinaskii");
+
+
         }
     }
 }
