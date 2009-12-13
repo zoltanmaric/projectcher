@@ -22,9 +22,11 @@ namespace Cher.DataLoad
 
         private void btnQuick_Click(object sender, EventArgs e)
         {
+            loader.TestDB();
+
             //rtbResult.Text = loader.GetTagsTopArtists("rock");
             
-            rtbResult.Text = loader.GetUsersTopArtists("HankChinaskii");
+            //rtbResult.Text = loader.GetUsersTopArtists("HankChinaskii");
 
 
         }
