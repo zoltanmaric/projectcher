@@ -1,0 +1,7 @@
+D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.Main\bin\Debug\Cher.Main.exe
+D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.Main\bin\Debug\Cher.Main.pdb
+D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.Main\obj\Debug\ResolveAssemblyReference.cache
+D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.Main\obj\Debug\Cher.Main.Properties.Resources.resources
+D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.Main\obj\Debug\Cher.Main.csproj.GenerateResource.Cache
+D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.Main\obj\Debug\Cher.Main.exe
+D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.Main\obj\Debug\Cher.Main.pdb
