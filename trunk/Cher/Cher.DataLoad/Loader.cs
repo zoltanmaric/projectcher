@@ -23,7 +23,7 @@ namespace Cher.DataLoad
 
             session = new Session(API_KEY, API_SECRET);
 
-            string connstring = @"Data Source=KOCKARNICA\SQL2008;Initial Catalog=CherDB;Integrated Security=True;";
+            string connstring = @"Data Source=(local)\SQL2008;Initial Catalog=CherDB;Integrated Security=True;";
 
             conn = new SqlConnection(connstring);
         }
@@ -128,5 +128,20 @@ namespace Cher.DataLoad
 
             return "temparica";
         }
+
+        #region Test
+
+        public void TestDB()
+        {
+            conn.Open();
+            string cmdText = "insert into test values(12, 'mamic')";
+            SqlCommand command = new SqlCommand(cmdText, conn);
+            command.ExecuteNonQuery();
+            conn.Close();
+            
+
+        }
+
+        #endregion  
     }
 }
