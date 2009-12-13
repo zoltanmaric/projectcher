@@ -8,11 +8,13 @@ Dakle, za radit je potreban SVN klijent a vi dsdovci i mi Vjeko i ja znamo radit
 
 Preporucam da si instalirate AnkhSVN jer se on utrpa u Visual Studio i mozete commitat iz Visual Studia s njim. Kad ga instalirate, mozda cete morat pod View-->Repository Explorer registrirat repozitorij da bi on prepoznao vas projekt. Da ga je prepoznao i da radi, znat cete ako se pojave kvacice kraj svake datoteke u solutionu. Kod njega je problem samo sto nakon sto ste gotovi s radom i sve commitate i ugasite VS, Tortoise javlja da nije sve iz foldera commitano iz nekog razloga, mozda zato sto gasenje VS-a radi promjene na .sln i .suo datoteci ili nesto drugo. Zato preporucam sljedeci nacin rada:
 
-1) Radis i commitas unutar Visual Studia
-2) Gotov/gotova si, napravis zadnji commit i gasis VS
-3) Odes na folder i commitas sa TortoiseSVN
+  # Radis i commitas unutar Visual Studia
+  # Gotov/gotova si, napravis zadnji commit i gasis VS
+  # Odes na folder i commitas sa TortoiseSVN
 
 
-Solution Gore je solution sa tri projekta: Cher.DataLoad?, Cher.Main i Cher.TestProject?
+===Solution===
+
+Gore je solution sa tri projekta: Cher.DataLoad?, Cher.Main i Cher.TestProject?
 
 DataLoad? se koristi za punjenje baze podataka, Main cemo koristit kao glavni projekt a TestProject? je primjer. Dodavamo projekte po potrebi i kolko hocemo, samo pratite nazivlje Cher. da bude sve super duper
