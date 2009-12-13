@@ -7,3 +7,5 @@ D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Ch
 D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.exe
 D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.pdb
 D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\bin\Debug\lastfm-sharp.dll
+D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.exe
+D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.pdb
