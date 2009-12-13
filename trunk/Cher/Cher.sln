@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cher.DataLoad", "Cher.DataLoad\Cher.DataLoad.csproj", "{1CFD7CB6-5F97-40E3-BF6F-DA2987F18816}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cher.Main", "Cher.Main\Cher.Main.csproj", "{59CB52C6-2FF6-484D-AC4E-9ABC0E96CBD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cher.TestProject", "Cher.TestProject\Cher.TestProject.csproj", "{8C922E84-4F42-4B36-811D-6D4E2447BAFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{1CFD7CB6-5F97-40E3-BF6F-DA2987F18816}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CFD7CB6-5F97-40E3-BF6F-DA2987F18816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CFD7CB6-5F97-40E3-BF6F-DA2987F18816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59CB52C6-2FF6-484D-AC4E-9ABC0E96CBD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59CB52C6-2FF6-484D-AC4E-9ABC0E96CBD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59CB52C6-2FF6-484D-AC4E-9ABC0E96CBD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59CB52C6-2FF6-484D-AC4E-9ABC0E96CBD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C922E84-4F42-4B36-811D-6D4E2447BAFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C922E84-4F42-4B36-811D-6D4E2447BAFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C922E84-4F42-4B36-811D-6D4E2447BAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C922E84-4F42-4B36-811D-6D4E2447BAFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
