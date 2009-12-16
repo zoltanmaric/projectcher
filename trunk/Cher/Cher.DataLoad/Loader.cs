@@ -48,6 +48,9 @@ namespace Cher.DataLoad
         {
             User user = new User(userName, session);
 
+            Period p = Period.Overall;
+
+            //TopArtist[] topArtists = user.GetTopArtists();
             TopArtist[] topArtists = user.GetTopArtists();
 
             string strTopArtists = String.Empty;
