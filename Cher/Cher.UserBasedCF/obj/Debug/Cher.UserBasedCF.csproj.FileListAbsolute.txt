@@ -1,0 +1,5 @@
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.UserBasedCF\bin\Debug\Cher.UserBasedCF.dll
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.UserBasedCF\bin\Debug\Cher.UserBasedCF.pdb
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.UserBasedCF\obj\Debug\ResolveAssemblyReference.cache
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.UserBasedCF\obj\Debug\Cher.UserBasedCF.dll
+D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.UserBasedCF\obj\Debug\Cher.UserBasedCF.pdb
