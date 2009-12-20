@@ -76,6 +76,7 @@ namespace Cher.Main
             string cmdText = @"select * from [CherDB].[dbo].[Artist]";
             SqlCommand command = new SqlCommand(cmdText, conn);
             SqlDataReader reader = command.ExecuteReader();
+            int index = 0;
             while (reader.Read())
             {
                 int artistID = (int)reader["ArtistID"];
@@ -92,7 +93,7 @@ namespace Cher.Main
                 {
                     url = (string)reader["URL"];
                 }
-                artists.Add(new CArtist(artistID, artistName, bio, url));
+                artists.Add(new CArtist(artistID, index++, artistName, bio, url));
             }
 
             return artists;
