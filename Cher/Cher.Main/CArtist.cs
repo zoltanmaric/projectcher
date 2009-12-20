@@ -7,7 +7,7 @@ namespace Cher.Main
 {
     class CArtist
     {
-        // ID u bazi - vjerojatno nepotrebno
+        // ID u bazi
         private int artistID;
         // indeks u listi artista u ovom modelu
         private int artistIndex;
@@ -32,9 +32,19 @@ namespace Cher.Main
             users.Add(newUser);
         }
 
+        public int ArtistID
+        {
+            get { return artistID; }
+        }
+
         public int ArtistIndex
         {
             get { return artistIndex; }
+        }
+
+        public override string ToString()
+        {
+            return artistName;
         }
     }
 }
