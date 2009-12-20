@@ -17,6 +17,7 @@ namespace Cher.Main
             conn = new SqlConnection(connstring);
         }
 
+        #region publics
         public List<CUser> LoadUsers()
         {
             List<CUser> users = new List<CUser>();
@@ -45,6 +46,7 @@ namespace Cher.Main
             loadUserArtistsTable(users, artists);
             conn.Close();
         }
+        #endregion
 
         #region privates
         private List<CUser> loadUserTable()
@@ -54,6 +56,7 @@ namespace Cher.Main
             string cmdText = @"select * from [CherDB].[dbo].[User]";
             SqlCommand command = new SqlCommand(cmdText, conn);
             SqlDataReader reader = command.ExecuteReader();
+            int index = 0;
             while (reader.Read())
             {
                 int userID = (int)reader["UserID"];
@@ -63,7 +66,7 @@ namespace Cher.Main
                 {
                     url = (string)reader["URL"];
                 }
-                users.Add(new CUser(userID, userName, url));
+                users.Add(new CUser(userID, index++, userName, url));
             }
 
             return users;
@@ -116,10 +119,10 @@ namespace Cher.Main
                 // pronađi usera čiji je ID u pročitanom retku
                 CUser user = users.Where(x => x.UserID == (int) reader["UserID"]).First();
                 // pronađi artista čiji je ID u pročitanom retku
-                CArtist artist = artists.Where(x => x.ArtistIndex == (int)reader["ArtistID"]).First();
+                CArtist artist = artists.Where(x => x.ArtistID == (int)reader["ArtistID"]).First();
+                int numListens = (int)reader["Rank"];
                 // dodaj im reference
-                user.AddArtist(artist);
-                user.AddArtistScore((int)reader["Rank"]);
+                user.AddArtist(artist, numListens);
                 artist.AddUser(user);
             }
         }

@@ -8,40 +8,35 @@ namespace Cher.Main
     class CUser
     {
         private int userID;
+        private int userIndex;
         private string userName;
         private string url;
         private List<CArtist> artists;
         // broj slušanja pojedinog artista - indeks
         // i-tom artistu u listi artists odgovara
         // i-ta ocjena u listi artistScores
-        private List<int> artistScores;
+        private List<long> artistNumListens;
+        private long totalNumListens;
         private List<CTrack> tracks;
 
-        public CUser(int userID, string userName, string url)
+        public CUser(int userID, int userIndex, string userName, string url)
         {
             this.userID = userID;
+            this.userIndex = userIndex;
             this.userName = userName;
             this.url = url;
 
             artists = new List<CArtist>();
-            artistScores = new List<int>();
+            artistNumListens = new List<long>();
+            totalNumListens = 0;
             tracks = new List<CTrack>();
         }
 
-        public void AddArtist(CArtist newArtist)
+        public void AddArtist(CArtist newArtist, int numListens)
         {
             artists.Add(newArtist);
-        }
-
-        /// <summary>
-        /// Dodaje vrijednost score na posljednje mjesto
-        /// u listi ocjena. i-ta ocjena u listi ocjena
-        /// odgovara i-tom artistu u listi artista.
-        /// </summary>
-        /// <param name="score">Ocjena (broj slušanja).</param>
-        public void AddArtistScore(int score)
-        {
-            artistScores.Add(score);
+            artistNumListens.Add(numListens);
+            totalNumListens += numListens;
         }
 
         public void AddTrack(CTrack newTrack)
@@ -49,9 +44,34 @@ namespace Cher.Main
             tracks.Add(newTrack);
         }
 
+        public decimal GetArtistScore(int artistIndex)
+        {
+            return (decimal)artistNumListens[artistIndex] / totalNumListens;
+        }
+
         public int UserID
         {
             get { return userID; }
+        }
+
+        public string UserName
+        {
+            get { return userName; }
+        }
+
+        public List<CArtist> Artists
+        {
+            get { return artists; }
+        }
+
+        public List<long> ArtistNumListens
+        {
+            get { return artistNumListens; }
+        }
+
+        public override string ToString()
+        {
+            return userName;
         }
     }
 }
