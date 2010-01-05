@@ -13,8 +13,8 @@ namespace Cher.Main
 
         public CherFactory()
         {
-            string connstring = @"Data Source=(local);Initial Catalog=CherDB;Integrated Security=True;";   
-            conn = new SqlConnection(connstring);
+            //string connstring = @"Data Source=(local);Initial Catalog=CherDB;Integrated Security=True;";   
+            conn = new SqlConnection(DataLoad.HardcodedNames.ConnString);
         }
 
         #region publics
