@@ -7,6 +7,7 @@ using System.IO;
 
 using System.Data.SqlClient;
 using Lastfm.Services;
+using System.Configuration;
 
 namespace Cher.DataLoad
 {
@@ -25,9 +26,9 @@ namespace Cher.DataLoad
 
             session = new Session(API_KEY, API_SECRET);
 
-            string connstring = @"Data Source=(local)\SQL2008;Initial Catalog=CherDB;Integrated Security=True;";
-
-            conn = new SqlConnection(connstring);
+            //string connstring = @"Data Source=(local)\SQL2008;Initial Catalog=CherDB;Integrated Security=True;";
+            //string connstring = "Data Source=LENOVOSTROJ;AttachDbFilename=\"C:\\Users\\Miroslav\\Documents\\My FER Documents\\9. Semestar\\Strojno Ucenje\\Projekt\\Baza_30_usera\\CherDB.mdf\";Initial Catalog=CherDB2;Integrated Security=True;User Instance=False";
+            conn = new SqlConnection(HardcodedNames.ConnString);
         }
 
         #region Publics
