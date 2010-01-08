@@ -12,13 +12,9 @@ namespace Cher.Main
         private string userName;
         private string url;
         private List<CArtist> artists;
-        // broj slušanja pojedinog artista - indeks
-        // i-tom artistu u listi artists odgovara
-        // i-ta ocjena u listi artistScores
-        private List<long> artistNumListens;
+        private Dictionary<string, long> artistNumListens;
         private long totalNumListens;
         private List<CTrack> tracks;
-        Dictionary<CArtist, decimal> artistEval;
 
         public CUser(int userID, int userIndex, string userName, string url)
         {
@@ -28,16 +24,15 @@ namespace Cher.Main
             this.url = url;
 
             artists = new List<CArtist>();
-            artistNumListens = new List<long>();
+            artistNumListens = new Dictionary<string, long>();
             totalNumListens = 0;
             tracks = new List<CTrack>();
-            artistEval = new Dictionary<CArtist, decimal>();
         }
 
         public void AddArtist(CArtist newArtist, int numListens)
         {
             artists.Add(newArtist);
-            artistNumListens.Add(numListens);
+            artistNumListens.Add(newArtist.ArtistName, numListens);
             totalNumListens += numListens;
         }
 
@@ -46,9 +41,9 @@ namespace Cher.Main
             tracks.Add(newTrack);
         }
 
-        public decimal GetArtistScore(int artistIndex)
+        public decimal GetArtistScore(string artist)
         {
-            return (decimal)artistNumListens[artistIndex] / totalNumListens;
+            return (decimal)artistNumListens[artist] / totalNumListens;
         }
 
         public int UserID
@@ -66,20 +61,9 @@ namespace Cher.Main
             get { return artists; }
         }
 
-        public List<long> ArtistNumListens
-        {
-            get { return artistNumListens; }
-        }
-
         public override string ToString()
         {
             return userName;
-        }
-
-        internal Dictionary<CArtist, decimal> ArtistEval
-        {
-            get { return artistEval; }
-            set { artistEval = value; }
         }
     }
 }

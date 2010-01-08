@@ -45,9 +45,10 @@ namespace Cher.Main
 
             scoresLstBox.BeginUpdate();
             scoresLstBox.Items.Clear();
-            foreach (long numListen in user.ArtistNumListens)
+            foreach (CArtist artist in user.Artists)
             {
-                scoresLstBox.Items.Add(numListen);
+                //scoresLstBox.Items.Add(scores[artist.ArtistName]);
+                scoresLstBox.Items.Add(user.GetArtistScore(artist.ArtistName));
             }
             scoresLstBox.EndUpdate();
         }
