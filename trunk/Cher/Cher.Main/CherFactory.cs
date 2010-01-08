@@ -125,6 +125,7 @@ namespace Cher.Main
                 user.AddArtist(artist, numListens);
                 artist.AddUser(user);
             }
+
         }
         #endregion
     }

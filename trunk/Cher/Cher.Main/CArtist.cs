@@ -46,5 +46,10 @@ namespace Cher.Main
         {
             return artistName;
         }
+
+        public string ArtistName
+        {
+            get { return artistName; }
+        }
     }
 }
