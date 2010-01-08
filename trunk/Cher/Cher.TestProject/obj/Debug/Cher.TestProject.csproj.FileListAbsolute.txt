@@ -12,3 +12,10 @@ D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.TestProject\obj\Debug
 D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.TestProject\obj\Debug\Cher.TestProject.csproj.GenerateResource.Cache
 D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.TestProject\obj\Debug\Cher.TestProject.exe
 D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.TestProject\obj\Debug\Cher.TestProject.pdb
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.TestProject\bin\Debug\Cher.TestProject.exe
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.TestProject\bin\Debug\Cher.TestProject.pdb
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.TestProject\obj\Debug\ResolveAssemblyReference.cache
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.TestProject\obj\Debug\Cher.TestProject.Properties.Resources.resources
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.TestProject\obj\Debug\Cher.TestProject.csproj.GenerateResource.Cache
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.TestProject\obj\Debug\Cher.TestProject.exe
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.TestProject\obj\Debug\Cher.TestProject.pdb

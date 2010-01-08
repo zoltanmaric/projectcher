@@ -3,3 +3,8 @@ D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.UserBasedCF\bin\Debug
 D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.UserBasedCF\obj\Debug\ResolveAssemblyReference.cache
 D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.UserBasedCF\obj\Debug\Cher.UserBasedCF.dll
 D:\FER\Diplomski\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.UserBasedCF\obj\Debug\Cher.UserBasedCF.pdb
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.UserBasedCF\bin\Debug\Cher.UserBasedCF.dll
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.UserBasedCF\bin\Debug\Cher.UserBasedCF.pdb
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.UserBasedCF\obj\Debug\ResolveAssemblyReference.cache
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.UserBasedCF\obj\Debug\Cher.UserBasedCF.dll
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.UserBasedCF\obj\Debug\Cher.UserBasedCF.pdb

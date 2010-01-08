@@ -16,7 +16,7 @@ namespace Cher.Main
         private long totalNumListens;
         private List<CTrack> tracks;
 
-        private double Similarity(CUser cUser, CUser cUser_2)
+        private decimal Similarity(CUser cUser, CUser cUser_2)
         {
             throw new NotImplementedException();
         }
