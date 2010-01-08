@@ -18,3 +18,13 @@ D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\C
 D:\FER\Predmeti\Diplomski studij\III. semestar\Strojno ucenje\Projekt\SVN\Cher\Cher\Cher.DataLoad\bin\Debug\lastfm-sharp.dll
 D:\�kola\FER\semestar9\Strojno u�enje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.exe
 D:\�kola\FER\semestar9\Strojno u�enje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.pdb
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\bin\Debug\Cher.DataLoad.exe.config
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.exe
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.pdb
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\bin\Debug\Cher.DataLoad.exe
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\bin\Debug\Cher.DataLoad.pdb
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\bin\Debug\lastfm-sharp.dll
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\obj\Debug\ResolveAssemblyReference.cache
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.MainForm.resources
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.Properties.Resources.resources
+D:\Škola\FER\semestar9\Strojno učenje\Projekt\kod_iz_repozitorija\Cher\Cher.DataLoad\obj\Debug\Cher.DataLoad.csproj.GenerateResource.Cache

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{59CB52C6-2FF6-484D-AC4E-9ABC0E96CBD4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -61,6 +61,7 @@
     <Compile Include="CherForm.Designer.cs">
       <DependentUpon>CherForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Neighbourhood.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CherForm.resx">
@@ -84,6 +85,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SimilarityMatrix.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cher.DataLoad\Cher.DataLoad.csproj">
