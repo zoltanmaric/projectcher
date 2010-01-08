@@ -9,7 +9,7 @@ namespace Cher.Main
     {
         private decimal[][] matrix;
 
-        public const decimal maxSimilarity = 1.0m;
+        public const decimal ownSimilarity = 0.0m;
 
         public decimal[] GetSimilaritiesRow(int paramUserIndex)
         {
@@ -22,13 +22,13 @@ namespace Cher.Main
             matrix = new decimal[numUsers][];
             for (int x = 0; x < numUsers; ++x) matrix[x] = new decimal[numUsers];
             
-            matrix[0][0] = maxSimilarity;
+            matrix[0][0] = ownSimilarity;
             for (int i = 0; i < (numUsers - 1); ++i)
             {
                 for (int j = i + 1; j < numUsers; ++j)
                 {
                     
-                    matrix[j][j] = maxSimilarity;
+                    matrix[j][j] = ownSimilarity;
                     matrix[j][i] = matrix[i][j] = Similarity(paramUsers[i], paramUsers[j]);
                 }
             }
