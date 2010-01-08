@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Cher.Main
 {
-    class CTrack
+    public class CTrack
     {
         private int trackID;
         private string title;

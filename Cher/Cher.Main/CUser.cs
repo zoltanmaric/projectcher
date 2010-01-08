@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Cher.Main
 {
-    class CUser
+    public class CUser
     {
         private int userID;
         private int userIndex;
@@ -15,6 +15,11 @@ namespace Cher.Main
         private Dictionary<string, long> artistNumListens;
         private long totalNumListens;
         private List<CTrack> tracks;
+
+        private double Similarity(CUser cUser, CUser cUser_2)
+        {
+            throw new NotImplementedException();
+        }
 
         public CUser(int userID, int userIndex, string userName, string url)
         {
