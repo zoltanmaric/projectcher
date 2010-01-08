@@ -34,6 +34,8 @@ namespace Cher.Main
 
             List<CUser> neigh = Neighbourhood.GetNeighbourhood(mainFrameUser, users, 7);
 
+            mainFrameUser.Neighbours = neigh;
+            List<CArtist> suggs = mainFrameUser.Suggestions(3);
 
 
             
