@@ -18,6 +18,7 @@ namespace Cher.Main
         private List<long> artistNumListens;
         private long totalNumListens;
         private List<CTrack> tracks;
+        Dictionary<CArtist, decimal> artistEval;
 
         public CUser(int userID, int userIndex, string userName, string url)
         {
@@ -30,6 +31,7 @@ namespace Cher.Main
             artistNumListens = new List<long>();
             totalNumListens = 0;
             tracks = new List<CTrack>();
+            artistEval = new Dictionary<CArtist, decimal>();
         }
 
         public void AddArtist(CArtist newArtist, int numListens)
@@ -72,6 +74,12 @@ namespace Cher.Main
         public override string ToString()
         {
             return userName;
+        }
+
+        internal Dictionary<CArtist, decimal> ArtistEval
+        {
+            get { return artistEval; }
+            set { artistEval = value; }
         }
     }
 }
