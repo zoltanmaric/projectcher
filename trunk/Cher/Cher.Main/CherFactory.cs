@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Cher.Main
 {
-    class CherFactory
+    public class CherFactory
     {
         SqlConnection conn;
 

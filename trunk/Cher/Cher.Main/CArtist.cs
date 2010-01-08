@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Cher.Main
 {
-    class CArtist
+    public class CArtist
     {
         // ID u bazi
         private int artistID;

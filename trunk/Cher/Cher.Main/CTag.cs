@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Cher.Main
 {
-    class CTag
+    public class CTag
     {
     }
 }
