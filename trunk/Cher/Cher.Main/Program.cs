@@ -15,7 +15,8 @@ namespace Cher.Main
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CherForm());
+            //Application.Run(new CherForm());
+            Application.Run(new TestForm());
         }
     }
 }
