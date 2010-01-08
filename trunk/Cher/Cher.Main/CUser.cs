@@ -47,6 +47,12 @@ namespace Cher.Main
             return (decimal)artistNumListens[artist] / totalNumListens;
         }
 
+        public List<CUser> Neighbours
+        {
+            get { return neighbours; }
+            set { neighbours = value; }
+        }
+
         public int UserID
         {
             get { return userID; }
@@ -103,15 +109,17 @@ namespace Cher.Main
 
             if (numOfSuggestions > suggestionIntensities.Count)
             {
-                return (from si in suggestionIntensities
+                List<CArtist> suggs = (from si in suggestionIntensities
                         orderby si.Value
                         select si.Key).Take(numOfSuggestions) as List<CArtist>;
+                return suggs;
             }
             else
             {
-                return (from si in suggestionIntensities
+                List<CArtist> suggs = (from si in suggestionIntensities
                         orderby si.Value
                         select si.Key) as List<CArtist>;
+                return suggs;
             }
 
         }
