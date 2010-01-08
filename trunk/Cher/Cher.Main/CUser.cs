@@ -17,7 +17,6 @@ namespace Cher.Main
         private List<CTrack> tracks;
         private List<CUser> neighbours;
 
-        private double Similarity(CUser cUser, CUser cUser_2)
         public CUser(int userID, int userIndex, string userName, string url)
         {
             this.userID = userID;
