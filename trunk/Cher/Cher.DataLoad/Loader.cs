@@ -46,7 +46,7 @@ namespace Cher.DataLoad
         public string FillDBWithoutTasteRandFirstUser(int numUsers)
         {
             string result = "";
-                
+
             try
             {
                 ClearCherDB();
@@ -91,7 +91,12 @@ namespace Cher.DataLoad
 
         private void WriteException(Exception ex)
         {
+            TextReader tr = new StreamReader("exceptions.txt");
+            string oldText = tr.ReadToEnd();
+            tr.Close();
+
             TextWriter tw = new StreamWriter("exceptions.txt");
+            tw.WriteLine(oldText);
             tw.WriteLine("########## New Exception##########");
             tw.WriteLine(DateTime.Now.ToString());
             tw.WriteLine(ex.Message);
@@ -136,7 +141,9 @@ namespace Cher.DataLoad
                 foreach (TopArtist ta in topArtists)
                 {
                     // ako ne postoji
-                    if (!artistsWT.Where(a => a.Name == ta.Item.Name).Any())
+                    string artistName = ta.Item.Name.Replace("'", "¯");
+                
+                    if (!artistsWT.Where(a => a.Name == artistName).Any())
                     {
                         artistsWT.Add(ta.Item);
                         InsertArtist(ta.Item);
@@ -144,6 +151,7 @@ namespace Cher.DataLoad
 
                     if (!userArtistsDone.Where(uad => (uad.ArtistName == ta.Item.Name) && (uad.UserName == userWT.Name)).Any())
                     {
+
                         int artistID = GetArtistIDByName(ta.Item.Name);
                         InsertUsersArtist(userID, artistID, ta.Weight);
                         userArtistsDone.Add(new UserArtistPair(userWT.Name, ta.Item.Name));
@@ -206,7 +214,9 @@ namespace Cher.DataLoad
                 foreach (User fof in fofs)
                 {
                     if (usersWT.Count >= numUsers) break;
-                    if (!usersWT.Where(bu => bu.Name == fof.Name).Any())
+                    string fofName = fof.Name.Replace("'", "¯");
+
+                    if (!usersWT.Where(bu => bu.Name == fofName).Any())
                     {
                         usersWT.Add(fof);
                     }
@@ -221,13 +231,20 @@ namespace Cher.DataLoad
             conn.Open();
             foreach (User user in usersWT)
             {
-                string userName = user.Name.Replace("'", "¯");
-                //string cmdText = @"insert into [CherDB].[dbo].[User](username, url) values('" + user.Name + "', '" + user.URL + "');";
-                string cmdText = @"insert into [CherDB].[dbo].[User](username) values('" + userName + "');";
-                
-                SqlCommand command = new SqlCommand(cmdText, conn);
+                try
+                {
+                    string userName = user.Name.Replace("'", "¯");
+                    //string cmdText = @"insert into [CherDB].[dbo].[User](username, url) values('" + user.Name + "', '" + user.URL + "');";
+                    string cmdText = @"insert into [CherDB].[dbo].[User](username) values('" + userName + "');";
 
-                command.ExecuteNonQuery();
+                    SqlCommand command = new SqlCommand(cmdText, conn);
+
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    WriteException(ex);
+                }
             }
             conn.Close();
         }
@@ -235,13 +252,20 @@ namespace Cher.DataLoad
         
         private void InsertUsersArtist(int userID, int artistID, int weight)
         {
-            string cmdText = @"insert into [CherDB].[dbo].[UserArtists] values(" + userID.ToString() + ", " + artistID.ToString() +", " + weight.ToString() + ");";
+            try
+            {
+                string cmdText = @"insert into [CherDB].[dbo].[UserArtists] values(" + userID.ToString() + ", " + artistID.ToString() + ", " + weight.ToString() + ");";
 
-            SqlCommand command = new SqlCommand(cmdText, conn);
+                SqlCommand command = new SqlCommand(cmdText, conn);
 
-            conn.Open();
-            command.ExecuteNonQuery();
-            conn.Close();
+                conn.Open();
+                command.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                WriteException(ex);
+            }
         }
 
         private int GetArtistIDByName(string artistName)
@@ -260,15 +284,22 @@ namespace Cher.DataLoad
 
         private void InsertArtist(Artist artist)
         {
-            //string cmdText = @"insert into [CherDB].[dbo].[Artist](artistname, bio, url) values('" + artistWT.Name + "', '" + artistWT.URL + "', '" + artistWT.Bio + "');";
-            string artistName = artist.Name.Replace("'", "¯");
-            string cmdText = @"insert into [CherDB].[dbo].[Artist](artistname) values('" + artistName + "');";
+            try
+            {
+                //string cmdText = @"insert into [CherDB].[dbo].[Artist](artistname, bio, url) values('" + artistWT.Name + "', '" + artistWT.URL + "', '" + artistWT.Bio + "');";
+                string artistName = artist.Name.Replace("'", "¯");
+                string cmdText = @"insert into [CherDB].[dbo].[Artist](artistname) values('" + artistName + "');";
 
-            SqlCommand command = new SqlCommand(cmdText, conn);
+                SqlCommand command = new SqlCommand(cmdText, conn);
 
-            conn.Open();
-            command.ExecuteNonQuery();
-            conn.Close();
+                conn.Open();
+                command.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                WriteException(ex);
+            }
         }
 
         private int GetUserIDByName(string userName)
