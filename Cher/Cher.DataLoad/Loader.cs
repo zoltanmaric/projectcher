@@ -45,37 +45,73 @@ namespace Cher.DataLoad
 
         public string FillDBWithoutTasteRandFirstUser(int numUsers)
         {
-            DateTime startTime = DateTime.Now;
+            string result = "";
+                
+            try
+            {
+                ClearCherDB();
+
+                DateTime startTime = DateTime.Now;
+
+                User startUser = GetRandBaseUser();
+
+                List<User> usersWT = FetchUsersWT(numUsers, startUser);
+                int actualUserCount = usersWT.Count;
+
+                TimeSpan ts1 = DateTime.Now - startTime;
+
+                FillDBUserWT(usersWT);
+
+                List<Artist> artistsWT = FetchArtistsWT(usersWT);
+                TimeSpan ts2 = DateTime.Now - startTime;
+
+                //FillDBArtistWT(artistsWT);
+
+                //List<Tag> tagsWT = FetchTagsWT(artistsWT);
+
+                //FillDBTagWT(tagsWT);
+
+                //FillDBOtherWT(usersWT);
+
+                DateTime endTime = DateTime.Now;
+                TimeSpan ts = endTime - startTime;
+
+                //WriteTagExceptions();
+
+                //result = "U: " + usersWT.Count.ToString() + ", A: " + artistsWT.Count.ToString() + ", T: " + tagsWT.Count.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                WriteException(ex);
+            } 
             
-            User startUser = GetRandBaseUser();
-
-            List<User> usersWT = FetchUsersWT(numUsers, startUser);
-            int actualUserCount = usersWT.Count;
-
-            TimeSpan ts1 = DateTime.Now - startTime;
-
-            FillDBUserWT(usersWT);
-
-            List<Artist> artistsWT = FetchArtistsWT(usersWT);
-            TimeSpan ts2 = DateTime.Now - startTime;
-
-            //FillDBArtistWT(artistsWT);
-
-            List<Tag> tagsWT = FetchTagsWT(artistsWT);
-            
-            //FillDBTagWT(tagsWT);
-        
-            //FillDBOtherWT(usersWT);
-
-            DateTime endTime = DateTime.Now;
-            TimeSpan ts = endTime - startTime;
-
-            WriteTagExceptions();
-
-            string result = "U: " + usersWT.Count.ToString() + ", A: " + artistsWT.Count.ToString() + ", T: " + tagsWT.Count.ToString();
-
-
             return result;
+        }
+
+        private void WriteException(Exception ex)
+        {
+            TextWriter tw = new StreamWriter("exceptions.txt");
+            tw.WriteLine("########## New Exception##########");
+            tw.WriteLine(DateTime.Now.ToString());
+            tw.WriteLine(ex.Message);
+            tw.WriteLine(ex.Source);
+            tw.Close();
+        }
+
+        private void ClearCherDB()
+        {
+            string cmdText = @"delete from [dbo].[artisttags]; ";
+            cmdText += @"delete from [dbo].[tag]; ";
+            cmdText += @"delete from [dbo].[userartists]; ";
+            cmdText += @"delete from [dbo].[artist]; ";
+            cmdText += @"delete from [dbo].[user]; ";
+
+            SqlCommand command = new SqlCommand(cmdText, conn);
+
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
         }
 
         public void FillDBWithTaste(int numUsers, string startUserName, float tomHigh, int numUserBase)
