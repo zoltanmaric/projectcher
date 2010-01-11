@@ -1,0 +1,70 @@
+
+########## New Exception##########
+11.1.2010. 16:58:15
+Violation of PRIMARY KEY constraint 'PK_UserArtists'. Cannot insert duplicate key in object 'dbo.UserArtists'.
+The statement has been terminated.
+.Net SqlClient Data Provider
+
+########## New Exception##########
+11.1.2010. 16:58:15
+The connection was not closed. The connection's current state is open.
+System.Data
+
+########## New Exception##########
+11.1.2010. 16:58:15
+The connection was not closed. The connection's current state is open.
+System.Data
+
+########## New Exception##########
+11.1.2010. 17:03:20
+Violation of PRIMARY KEY constraint 'PK_UserArtists'. Cannot insert duplicate key in object 'dbo.UserArtists'.
+The statement has been terminated.
+.Net SqlClient Data Provider
+
+########## New Exception##########
+11.1.2010. 17:03:23
+Violation of PRIMARY KEY constraint 'PK_UserArtists'. Cannot insert duplicate key in object 'dbo.UserArtists'.
+The statement has been terminated.
+.Net SqlClient Data Provider
+
+########## New Exception##########
+11.1.2010. 17:03:23
+Violation of PRIMARY KEY constraint 'PK_UserArtists'. Cannot insert duplicate key in object 'dbo.UserArtists'.
+The statement has been terminated.
+.Net SqlClient Data Provider
+
+########## New Exception##########
+11.1.2010. 17:03:24
+Violation of PRIMARY KEY constraint 'PK_UserArtists'. Cannot insert duplicate key in object 'dbo.UserArtists'.
+The statement has been terminated.
+.Net SqlClient Data Provider
+
+########## New Exception##########
+11.1.2010. 17:04:23
+Violation of PRIMARY KEY constraint 'PK_UserArtists'. Cannot insert duplicate key in object 'dbo.UserArtists'.
+The statement has been terminated.
+.Net SqlClient Data Provider
+
+########## New Exception##########
+11.1.2010. 17:04:23
+Violation of PRIMARY KEY constraint 'PK_UserArtists'. Cannot insert duplicate key in object 'dbo.UserArtists'.
+The statement has been terminated.
+.Net SqlClient Data Provider
+
+########## New Exception##########
+11.1.2010. 17:04:23
+Violation of PRIMARY KEY constraint 'PK_UserArtists'. Cannot insert duplicate key in object 'dbo.UserArtists'.
+The statement has been terminated.
+.Net SqlClient Data Provider
+
+########## New Exception##########
+11.1.2010. 17:04:23
+Violation of PRIMARY KEY constraint 'PK_UserArtists'. Cannot insert duplicate key in object 'dbo.UserArtists'.
+The statement has been terminated.
+.Net SqlClient Data Provider
+
+########## New Exception##########
+11.1.2010. 17:04:26
+Violation of PRIMARY KEY constraint 'PK_UserArtists'. Cannot insert duplicate key in object 'dbo.UserArtists'.
+The statement has been terminated.
+.Net SqlClient Data Provider
