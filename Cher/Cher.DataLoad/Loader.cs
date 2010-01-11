@@ -63,23 +63,19 @@ namespace Cher.DataLoad
                 FillDBUserWT(usersWT);
 
                 List<Artist> artistsWT = FetchArtistsWT(usersWT);
+                
                 TimeSpan ts2 = DateTime.Now - startTime;
 
                 //FillDBArtistWT(artistsWT);
-
                 //List<Tag> tagsWT = FetchTagsWT(artistsWT);
-
                 //FillDBTagWT(tagsWT);
-
                 //FillDBOtherWT(usersWT);
 
                 DateTime endTime = DateTime.Now;
                 TimeSpan ts = endTime - startTime;
 
                 //WriteTagExceptions();
-
                 //result = "U: " + usersWT.Count.ToString() + ", A: " + artistsWT.Count.ToString() + ", T: " + tagsWT.Count.ToString();
-
             }
             catch (Exception ex)
             {
@@ -140,19 +136,24 @@ namespace Cher.DataLoad
 
                 foreach (TopArtist ta in topArtists)
                 {
+                    //string artistName = ta.Item.Name.Replace("'", "¯");
+
                     // ako ne postoji
-                    string artistName = ta.Item.Name.Replace("'", "¯");
-                
-                    if (!artistsWT.Where(a => a.Name == artistName).Any())
+                    //if (!artistsWT.Where(a => a.Name == artistName).Any())
+                    // ovdje mozemo provjeravati satara imena sa ', jer su takva u listi
+                    if (!artistsWT.Where(a => a.Name == ta.Item.Name).Any())
                     {
                         artistsWT.Add(ta.Item);
+                        // u ovoj metodi ce ubaciti artista sa zamijenjenim ' u ¯
                         InsertArtist(ta.Item);
                     }
 
+                    // moze usporedba po starom sa ' jer su tako i dodavani
                     if (!userArtistsDone.Where(uad => (uad.ArtistName == ta.Item.Name) && (uad.UserName == userWT.Name)).Any())
                     {
-
-                        int artistID = GetArtistIDByName(ta.Item.Name);
+                        string artistNewName = ta.Item.Name.Replace("'", "¯");
+                        //int artistID = GetArtistIDByName(ta.Item.Name);
+                        int artistID = GetArtistIDByName(artistNewName);
                         InsertUsersArtist(userID, artistID, ta.Weight);
                         userArtistsDone.Add(new UserArtistPair(userWT.Name, ta.Item.Name));
                     }
@@ -214,9 +215,9 @@ namespace Cher.DataLoad
                 foreach (User fof in fofs)
                 {
                     if (usersWT.Count >= numUsers) break;
-                    string fofName = fof.Name.Replace("'", "¯");
-
-                    if (!usersWT.Where(bu => bu.Name == fofName).Any())
+                    
+                    if ((!usersWT.Where(bu => bu.Name == fof.Name).Any()) 
+                        && (!fof.Name.Contains("'")))
                     {
                         usersWT.Add(fof);
                     }
@@ -228,14 +229,16 @@ namespace Cher.DataLoad
 
         private void FillDBUserWT(List<User> usersWT)
         {
-            conn.Open();
+            //conn.Open();
             foreach (User user in usersWT)
             {
                 try
                 {
-                    string userName = user.Name.Replace("'", "¯");
-                    //string cmdText = @"insert into [CherDB].[dbo].[User](username, url) values('" + user.Name + "', '" + user.URL + "');";
-                    string cmdText = @"insert into [CherDB].[dbo].[User](username) values('" + userName + "');";
+                    conn.Open();
+
+                    //string userName = user.Name.Replace("'", "¯");
+                    //string cmdText = @"insert into [CherDB].[dbo].[User](username) values('" + userName + "');";
+                    string cmdText = @"insert into [CherDB].[dbo].[User](username, url) values('" + user.Name + "', '" + user.URL + "');";
 
                     SqlCommand command = new SqlCommand(cmdText, conn);
 
@@ -245,8 +248,12 @@ namespace Cher.DataLoad
                 {
                     WriteException(ex);
                 }
+                finally
+                {
+                    conn.Close();        
+                }
             }
-            conn.Close();
+            //conn.Close();
         }
 
         
@@ -260,11 +267,15 @@ namespace Cher.DataLoad
 
                 conn.Open();
                 command.ExecuteNonQuery();
-                conn.Close();
+                //conn.Close();
             }
             catch (Exception ex)
             {
                 WriteException(ex);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
@@ -294,11 +305,15 @@ namespace Cher.DataLoad
 
                 conn.Open();
                 command.ExecuteNonQuery();
-                conn.Close();
+                //conn.Close();
             }
             catch (Exception ex)
             {
                 WriteException(ex);
+            }
+            finally
+            {
+                conn.Close();            
             }
         }
 
