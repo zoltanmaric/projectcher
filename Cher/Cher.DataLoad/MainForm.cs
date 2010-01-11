@@ -36,7 +36,7 @@ namespace Cher.DataLoad
             //loader.FillUsersTestTwo(10, tomValue);
 
             DateTime startTime = DateTime.Now;
-            string result = loader.FillDBWithoutTasteRandFirstUser(30);
+            string result = loader.FillDBWithoutTasteRandFirstUser(10);
             DateTime endTime = DateTime.Now;
 
             TimeSpan timeSpan = endTime - startTime;
