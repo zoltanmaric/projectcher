@@ -14,8 +14,12 @@ namespace Cher.DataLoad
         {
             get
             {
+
                 //return ConfigurationManager.ConnectionStrings[CONN_STRING_NAME].ConnectionString;
-                return "Data Source=LENOVOSTROJ;AttachDbFilename=C:\\Users\\Miroslav\\Documents\\My FER Documents\\9. Semestar\\Strojno Ucenje\\Projekt\\Baza_30_usera\\CherDB.mdf;Initial Catalog=CherDB2;Integrated Security=True;User Instance=False";
+                //return "Data Source=LENOVOSTROJ;AttachDbFilename=C:\\Users\\Miroslav\\Documents\\My FER Documents\\9. Semestar\\Strojno Ucenje\\Projekt\\Baza_30_usera\\CherDB.mdf;Initial Catalog=CherDB2;Integrated Security=True;User Instance=False";
+
+                return @"Data Source=(local)\SQL2008;Initial Catalog=CherDB;Integrated Security=True";
+                
             }
         }
 
