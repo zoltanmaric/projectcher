@@ -191,7 +191,6 @@ namespace Cher.DataLoad
             return tagsWT;
         }
 
-
         private List<User> FetchUsersWT(int numUsers, User startUser)
         {
             User[] startUserFriends = startUser.GetFriends();
