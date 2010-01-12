@@ -40,6 +40,7 @@
             this.txtArtistSize = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnXMLTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usersLstBox
@@ -145,6 +146,16 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Users:";
             // 
+            // btnXMLTest
+            // 
+            this.btnXMLTest.Location = new System.Drawing.Point(363, 460);
+            this.btnXMLTest.Name = "btnXMLTest";
+            this.btnXMLTest.Size = new System.Drawing.Size(75, 23);
+            this.btnXMLTest.TabIndex = 9;
+            this.btnXMLTest.Text = "XML Test";
+            this.btnXMLTest.UseVisualStyleBackColor = true;
+            this.btnXMLTest.Click += new System.EventHandler(this.btnXMLTest_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +164,7 @@
             this.Controls.Add(this.txtArtistSize);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNeighSize);
+            this.Controls.Add(this.btnXMLTest);
             this.Controls.Add(this.btnRecommend);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label2);
@@ -183,5 +195,6 @@
         private System.Windows.Forms.TextBox txtArtistSize;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnXMLTest;
     }
 }
