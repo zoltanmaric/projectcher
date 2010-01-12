@@ -37,8 +37,7 @@ namespace Cher.Main
             mainFrameUser.Neighbours = neigh;
             List<CArtist> suggs = mainFrameUser.Suggestions(3);
 
-
-            
+            int babetinga = 0;
         }
 
     }
