@@ -110,14 +110,14 @@ namespace Cher.Main
             if (numOfSuggestions < suggestionIntensities.Count)
             {
                 List<CArtist> suggs = (from si in suggestionIntensities
-                        orderby si.Value
+                        orderby si.Value descending
                         select si.Key).Take(numOfSuggestions).ToList();
                 return suggs;
             }
             else
             {
                 List<CArtist> suggs = (from si in suggestionIntensities
-                                       orderby si.Value
+                                       orderby si.Value descending
                                        select si.Key).ToList();
                 return suggs;
             }
