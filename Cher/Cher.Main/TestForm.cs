@@ -14,6 +14,9 @@ namespace Cher.Main
         CherFactory factory;
         List<CUser> users;
         List<CArtist> artists;
+        
+        const int numberOfNeighbours = 7;
+        const int numberOfSuggestions = 10;            
 
         public TestForm()
         {
@@ -28,14 +31,12 @@ namespace Cher.Main
         private void btnQuick_Click(object sender, EventArgs e)
         {
             SimilarityMatrix sm = new SimilarityMatrix(users);
-            Neighbourhood.SimilarityMatrix = sm;
+            //Neighbourhood.SimilarityMatrix = sm;
             
             CUser mainFrameUser = users.First();
 
-            List<CUser> neigh = Neighbourhood.GetNeighbourhood(mainFrameUser, users, 7);
-
-            mainFrameUser.Neighbours = neigh;
-            List<CArtist> suggs = mainFrameUser.Suggestions(3);
+            mainFrameUser.FindNeighbours(sm, users, numberOfNeighbours);
+            List<CArtist> suggs = mainFrameUser.Suggestions(numberOfSuggestions);
 
             int babetinga = 0;
         }
