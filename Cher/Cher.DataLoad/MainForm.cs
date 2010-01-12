@@ -36,7 +36,7 @@ namespace Cher.DataLoad
             //loader.FillUsersTestTwo(10, tomValue);
 
             DateTime startTime = DateTime.Now;
-            string result = loader.FillDBWithoutTasteRandFirstUser(50);
+            string result = loader.FillDBWithoutTasteRandFirstUser(1000);
             DateTime endTime = DateTime.Now;
 
             TimeSpan timeSpan = endTime - startTime;
@@ -61,6 +61,35 @@ namespace Cher.DataLoad
             //rtbResult.Text = loader.GetUsersTopArtists("HankChinaskii");
 
 
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            //bool res = loader.ArtistExistsInDB("Đorđe Balašević");
+            //bool res = loader.ArtistExistsInDB("Incubus");
+            DateTime startTime = DateTime.Now;
+
+            //string username = "zla_vjestica";
+
+            if (txtUserName.Text == "")
+            {
+                txtUserName.Text = "trebamime";
+                return;
+            }
+
+            string username = txtUserName.Text;
+
+            if (!loader.UserExistsInDB(username))
+            {
+                string result = loader.FillOneUser(username);
+            }
+            
+
+            DateTime endTime = DateTime.Now;
+            TimeSpan timeSpan = endTime - startTime;
+            string time = timeSpan.ToString();
+
+            int baba = 0;
         }
     }
 }

@@ -47,40 +47,33 @@ namespace Cher.DataLoad
         {
             string result = "";
 
-            try
-            {
-                ClearCherDB();
+            ClearCherDB();
 
-                DateTime startTime = DateTime.Now;
+            DateTime startTime = DateTime.Now;
 
-                User startUser = GetRandBaseUser();
+            User startUser = GetRandBaseUser();
 
-                List<User> usersWT = FetchUsersWT(numUsers, startUser);
-                int actualUserCount = usersWT.Count;
+            List<User> usersWT = FetchUsersWT(numUsers, startUser);
+            int actualUserCount = usersWT.Count;
 
-                TimeSpan ts1 = DateTime.Now - startTime;
+            TimeSpan ts1 = DateTime.Now - startTime;
 
-                FillDBUserWT(usersWT);
+            FillDBUserWT(usersWT);
 
-                List<Artist> artistsWT = FetchArtistsWT(usersWT);
-                
-                TimeSpan ts2 = DateTime.Now - startTime;
+            List<Artist> artistsWT = FetchArtistsWT(usersWT);
+            
+            TimeSpan ts2 = DateTime.Now - startTime;
 
-                //FillDBArtistWT(artistsWT);
-                //List<Tag> tagsWT = FetchTagsWT(artistsWT);
-                //FillDBTagWT(tagsWT);
-                //FillDBOtherWT(usersWT);
+            //FillDBArtistWT(artistsWT);
+            //List<Tag> tagsWT = FetchTagsWT(artistsWT);
+            //FillDBTagWT(tagsWT);
+            //FillDBOtherWT(usersWT);
 
-                DateTime endTime = DateTime.Now;
-                TimeSpan ts = endTime - startTime;
+            DateTime endTime = DateTime.Now;
+            TimeSpan ts = endTime - startTime;
 
-                //WriteTagExceptions();
-                //result = "U: " + usersWT.Count.ToString() + ", A: " + artistsWT.Count.ToString() + ", T: " + tagsWT.Count.ToString();
-            }
-            catch (Exception ex)
-            {
-                WriteException(ex);
-            } 
+            //WriteTagExceptions();
+            //result = "U: " + usersWT.Count.ToString() + ", A: " + artistsWT.Count.ToString() + ", T: " + tagsWT.Count.ToString();
             
             return result;
         }
@@ -131,7 +124,16 @@ namespace Cher.DataLoad
             List<Artist> artistsWT = new List<Artist>();
             foreach (User userWT in usersWT)
             {
-                TopArtist[] topArtists = userWT.GetTopArtists();
+                TopArtist[] topArtists;
+                try
+                {
+                    topArtists = userWT.GetTopArtists();
+                }
+                catch (Exception ex)
+                {
+                    topArtists = userWT.GetTopArtists();                
+                }
+
                 int userID = GetUserIDByName(userWT.Name);
 
                 foreach (TopArtist ta in topArtists)
@@ -202,26 +204,31 @@ namespace Cher.DataLoad
 
         private List<User> FetchUsersWT(int numUsers, User startUser)
         {
-            User[] startUserFriends = startUser.GetFriends();
             List<User> usersWT = new List<User>();
-
+            
             // za svakog pocetnog prijatelja, 
-            foreach (User startFriend in startUserFriends)
+            while (usersWT.Count < numUsers)
             {
-                if (usersWT.Count >= numUsers) break;
-
-                User[] fofs = startFriend.GetFriends();
-
-                foreach (User fof in fofs)
+                User[] startUserFriends = startUser.GetFriends();
+                foreach (User startFriend in startUserFriends)
                 {
                     if (usersWT.Count >= numUsers) break;
-                    
-                    if ((!usersWT.Where(bu => bu.Name == fof.Name).Any()) 
-                        && (!fof.Name.Contains("'")))
+
+                    User[] fofs = startFriend.GetFriends();
+
+                    foreach (User fof in fofs)
                     {
-                        usersWT.Add(fof);
+                        if (usersWT.Count >= numUsers) break;
+
+                        if ((!usersWT.Where(bu => bu.Name == fof.Name).Any())
+                            && (!fof.Name.Contains("'")))
+                        {
+                            usersWT.Add(fof);
+                        }
                     }
                 }
+
+                startUser = usersWT.Last();
             }
 
             return usersWT;           
@@ -232,28 +239,33 @@ namespace Cher.DataLoad
             //conn.Open();
             foreach (User user in usersWT)
             {
-                try
-                {
-                    conn.Open();
-
-                    //string userName = user.Name.Replace("'", "¯");
-                    //string cmdText = @"insert into [CherDB].[dbo].[User](username) values('" + userName + "');";
-                    string cmdText = @"insert into [CherDB].[dbo].[User](username, url) values('" + user.Name + "', '" + user.URL + "');";
-
-                    SqlCommand command = new SqlCommand(cmdText, conn);
-
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    WriteException(ex);
-                }
-                finally
-                {
-                    conn.Close();        
-                }
+                InsertUser(user);
             }
             //conn.Close();
+        }
+
+        private void InsertUser(User user)
+        {
+            try
+            {
+                conn.Open();
+
+                //string userName = user.Name.Replace("'", "¯");
+                //string cmdText = @"insert into [CherDB].[dbo].[User](username) values('" + userName + "');";
+                string cmdText = @"insert into [CherDB].[dbo].[User](username, url) values('" + user.Name + "', '" + user.URL + "');";
+
+                SqlCommand command = new SqlCommand(cmdText, conn);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                WriteException(ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         
@@ -842,6 +854,115 @@ namespace Cher.DataLoad
         }
 
         #endregion  
+    
+        public string FillOneUser(string username)
+        {
+            string result = "";
+
+            User oneUser = new User(username, session);
+            
+            if (oneUser == null)
+            {
+                return username + " ne postoji";
+            }
+
+            TopArtist[] topArtists;
+            try
+            {
+                topArtists = oneUser.GetTopArtists();
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message == "InvalidParameters: No user with that name")  return "nema tog korisnika na lfmu";
+                topArtists = oneUser.GetTopArtists();
+            }
+            
+            InsertUser(oneUser);
+
+            int userID = GetUserIDByName(oneUser.Name);
+
+            foreach (TopArtist ta in topArtists)
+            {
+                // ako artist ne postoji u bazi
+                if (!ArtistExistsInDB(ta.Item.Name))
+                {
+                    InsertArtist(ta.Item);
+                }
+
+                string artistNewName = ta.Item.Name.Replace("'", "¯");
+                //int artistID = GetArtistIDByName(ta.Item.Name);
+                int artistID = GetArtistIDByName(artistNewName);
+                InsertUsersArtist(userID, artistID, ta.Weight);                
+            }
+
+            return result;
+        }
+
+        public bool ArtistExistsInDB(string artistName)
+        {
+            try
+            {
+                string artistNewName = artistName.Replace("'", "¯");
+                        
+                string cmdText = @"select * from [dbo].[artist] where artistName like '" + artistNewName + "';";
+                
+                SqlCommand command = new SqlCommand(cmdText, conn);
+                
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                WriteException(ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return false;
+        }
+
+        public bool UserExistsInDB(string username)
+        {
+            try
+            {
+                string userNewName = username.Replace("'", "¯");
+
+                string cmdText = @"select * from [dbo].[user] where userName like '" + userNewName + "';";
+
+                SqlCommand command = new SqlCommand(cmdText, conn);
+
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                WriteException(ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return false;
+        }
     }
 
     public class UserPair
