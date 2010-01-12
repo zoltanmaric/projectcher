@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Cher.Main
 {
@@ -22,7 +23,10 @@ namespace Cher.Main
         {
             InitializeComponent();
 
-            factory = new CherFactory();        
+            factory = new CherFactory();
+
+            txtArtistSize.Text = "20";
+            txtNeighSize.Text = "20";
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -72,6 +76,55 @@ namespace Cher.Main
             lsbRecArtists.DisplayMember = "ArtistName";
             lsbRecArtists.DataSource = suggs;            
 
+        }
+
+        private void btnXMLTest_Click(object sender, EventArgs e)
+        {
+            List<XUser> xusers = new List<XUser>();
+            
+            XDocument xfm = XDocument.Load("lastfm.xml");
+
+            var xmlUsers = from u in xfm.Descendants("user")
+                           select u;
+            
+            foreach (var user in xmlUsers)
+            {
+                XUser xuser = new XUser(user.Attribute("name").Value);
+
+                var xartists = from a in user.Descendants("preporuka_benda")
+                               select a.Value;
+
+                xuser.XArtists = xartists.ToList();
+
+                xusers.Add(xuser);
+            }
+
+
+        }
+    }
+
+    public class XUser
+    {
+        string userName = "";
+
+        List<string> xArtists;
+
+        public XUser(string username)
+        {
+            userName = username;
+            xArtists = new List<string>();
+        }
+
+        public XUser(string username, List<string> xartists)
+        {
+            userName = username;
+            xArtists = xartists;
+        }
+
+        public List<string> XArtists
+        {
+            get { return xArtists; }
+            set { xArtists = value; }
         }
     }
 }
