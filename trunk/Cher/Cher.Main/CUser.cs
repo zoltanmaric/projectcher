@@ -107,18 +107,18 @@ namespace Cher.Main
                 suggestionIntensities.Add(item.Key, suggestionIntensity);
             }
 
-            if (numOfSuggestions > suggestionIntensities.Count)
+            if (numOfSuggestions < suggestionIntensities.Count)
             {
                 List<CArtist> suggs = (from si in suggestionIntensities
                         orderby si.Value
-                        select si.Key).Take(numOfSuggestions) as List<CArtist>;
+                        select si.Key).Take(numOfSuggestions).ToList();
                 return suggs;
             }
             else
             {
                 List<CArtist> suggs = (from si in suggestionIntensities
-                        orderby si.Value
-                        select si.Key) as List<CArtist>;
+                                       orderby si.Value
+                                       select si.Key).ToList();
                 return suggs;
             }
 
