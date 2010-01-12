@@ -50,7 +50,6 @@ namespace Cher.Main
         public List<CUser> Neighbours
         {
             get { return neighbours; }
-            set { neighbours = value; }
         }
 
         public int UserID
@@ -71,6 +70,27 @@ namespace Cher.Main
         public override string ToString()
         {
             return userName;
+        }
+
+        public List<CUser> FindNeighbours(SimilarityMatrix similarityMatrix, List<CUser> paramAllUsers, int paramSize)
+        {
+            if (neighbours == null)
+            {
+                decimal[] similarities = similarityMatrix.GetSimilaritiesRow(userIndex);
+
+                Dictionary<CUser, decimal> similarityDict = new Dictionary<CUser, decimal>();
+
+                for (int i = 0; i < paramAllUsers.Count; i++)
+                {
+                    similarityDict.Add(paramAllUsers[i], similarities[i]);
+                }
+
+                neighbours = (from simi in similarityDict
+                              orderby simi.Value descending
+                              select simi.Key).Take(paramSize).ToList();
+            }
+
+            return neighbours;
         }
 
         public List<CArtist> Suggestions(int numOfSuggestions)
