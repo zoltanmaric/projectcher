@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace Cher.Main
 {
@@ -63,14 +62,11 @@ namespace Cher.Main
 
             CUser mainFrameUser = usersLstBox.SelectedItem as CUser;
 
-            Neighbourhood.SimilarityMatrix = sm;
+            mainFrameUser.FindNeighbours(sm, users, neighSize);
             
-            List<CUser> neigh = Neighbourhood.GetNeighbourhood(mainFrameUser, users, neighSize);
-
             lsbNeigh.DisplayMember = "UserName";
-            lsbNeigh.DataSource = neigh;            
+            lsbNeigh.DataSource = mainFrameUser.Neighbours;            
 
-            mainFrameUser.Neighbours = neigh;
             List<CArtist> suggs = mainFrameUser.Suggestions(numOfRecArtists);
 
             lsbRecArtists.DisplayMember = "ArtistName";
@@ -80,26 +76,7 @@ namespace Cher.Main
 
         private void btnXMLTest_Click(object sender, EventArgs e)
         {
-            List<XUser> xusers = new List<XUser>();
-            
-            XDocument xfm = XDocument.Load("lastfm.xml");
-
-            var xmlUsers = from u in xfm.Descendants("user")
-                           select u;
-            
-            foreach (var user in xmlUsers)
-            {
-                XUser xuser = new XUser(user.Attribute("name").Value);
-
-                var xartists = from a in user.Descendants("preporuka_benda")
-                               select a.Value;
-
-                xuser.XArtists = xartists.ToList();
-
-                xusers.Add(xuser);
-            }
-
-
+            List<XUser> xusers = LFMXMLReader.ReadXUsersFromXML();
         }
     }
 
