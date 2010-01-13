@@ -90,10 +90,7 @@ namespace Cher.Main
             }
         }
 
-        private void btnXMLTest_Click(object sender, EventArgs e)
-        {
-            List<XUser> xusers = LFMXMLReader.ReadXUsersFromXML();
-        }
+
     }
 
     public class XUser
