@@ -41,6 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnXMLTest = new System.Windows.Forms.Button();
+            this.lsbLastFMArtists = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // usersLstBox
@@ -156,21 +158,40 @@
             this.btnXMLTest.UseVisualStyleBackColor = true;
             this.btnXMLTest.Click += new System.EventHandler(this.btnXMLTest_Click);
             // 
+            // lsbLastFMArtists
+            // 
+            this.lsbLastFMArtists.FormattingEnabled = true;
+            this.lsbLastFMArtists.Location = new System.Drawing.Point(689, 58);
+            this.lsbLastFMArtists.Name = "lsbLastFMArtists";
+            this.lsbLastFMArtists.Size = new System.Drawing.Size(210, 368);
+            this.lsbLastFMArtists.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(686, 39);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(151, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Last.FM recommended ar tists:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 515);
+            this.ClientSize = new System.Drawing.Size(911, 515);
             this.Controls.Add(this.txtArtistSize);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNeighSize);
             this.Controls.Add(this.btnXMLTest);
             this.Controls.Add(this.btnRecommend);
             this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.usersLbl);
+            this.Controls.Add(this.lsbLastFMArtists);
             this.Controls.Add(this.lsbRecArtists);
             this.Controls.Add(this.lsbNeigh);
             this.Controls.Add(this.usersLstBox);
@@ -196,5 +217,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnXMLTest;
+        private System.Windows.Forms.ListBox lsbLastFMArtists;
+        private System.Windows.Forms.Label label5;
     }
 }
