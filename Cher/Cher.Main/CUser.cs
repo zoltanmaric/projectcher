@@ -7,6 +7,8 @@ namespace Cher.Main
 {
     public class CUser
     {
+        public static long MaxListens = 0;
+
         private int userID;
         private int userIndex;
         private string userName;
@@ -35,6 +37,10 @@ namespace Cher.Main
             artists.Add(newArtist);
             artistNumListens.Add(newArtist.ArtistName, numListens);
             totalNumListens += numListens;
+            if (totalNumListens > MaxListens)
+            {
+                MaxListens = totalNumListens;
+            }
         }
 
         public void AddTrack(CTrack newTrack)
@@ -42,9 +48,9 @@ namespace Cher.Main
             tracks.Add(newTrack);
         }
 
-        public decimal GetArtistScore(string artist)
+        public long GetArtistScore(string artist)
         {
-            return (decimal)artistNumListens[artist] / totalNumListens;
+            return artistNumListens[artist] * MaxListens / totalNumListens;
         }
 
         public List<CUser> Neighbours

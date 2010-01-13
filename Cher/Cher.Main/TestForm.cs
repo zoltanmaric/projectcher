@@ -33,7 +33,9 @@ namespace Cher.Main
             SimilarityMatrix sm = new SimilarityMatrix(users);
             //Neighbourhood.SimilarityMatrix = sm;
             
-            CUser mainFrameUser = users.First();
+            CUser mainFrameUser = (from u in users
+                                   where (u.UserName == "Oblachica")
+                                   select u).First();
 
             mainFrameUser.FindNeighbours(sm, users, numberOfNeighbours);
             List<CArtist> suggs = mainFrameUser.Suggestions(numberOfSuggestions);
