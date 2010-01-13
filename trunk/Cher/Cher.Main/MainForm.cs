@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
+
 
 namespace Cher.Main
 {
@@ -58,6 +60,13 @@ namespace Cher.Main
             Recommend();
 
             Evaluate();
+
+            GenerateXMLForUser();
+        }
+
+        private void GenerateXMLForUser()
+        {
+            //XDocument xdoc = new XDocument(    
         }
 
         private void Evaluate()
