@@ -61,6 +61,7 @@
     <Compile Include="CherForm.Designer.cs">
       <DependentUpon>CherForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Evaluator.cs" />
     <Compile Include="LFMXMLReader.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -97,6 +98,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Results.cs" />
     <Compile Include="SimilarityMatrix.cs" />
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
