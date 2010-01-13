@@ -61,7 +61,6 @@
     <Compile Include="CherForm.Designer.cs">
       <DependentUpon>CherForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Neighbourhood.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CherForm.resx">
