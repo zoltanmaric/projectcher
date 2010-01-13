@@ -84,6 +84,10 @@ namespace Cher.Main
                 xMainFrameUser.XArtists.Sort();
                 lsbLastFMArtists.DataSource = xMainFrameUser.XArtists;
             }
+            else
+            {
+                lsbLastFMArtists.DataSource = null;            
+            }
         }
 
         private void btnXMLTest_Click(object sender, EventArgs e)
