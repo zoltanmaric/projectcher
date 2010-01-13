@@ -105,6 +105,11 @@ namespace Cher.Main
             {
                 foreach (CArtist artist in neighbour.Artists)
                 {
+                    // nemoj raditi preporuke za izvođače
+                    // koje ovaj korisnik već sluša
+                    if (this.artists.Contains(artist))
+                        continue;
+
                     if (artistScores.ContainsKey(artist))
                     {
                         artistScores[artist].Score += neighbour.GetArtistScore(artist.ArtistName);
@@ -116,8 +121,7 @@ namespace Cher.Main
                     {
                         artistScores.Add(artist, new CArtistScore(neighbour.GetArtistScore(artist.ArtistName)));
                     }
-                }
-                
+                }                
             }
             Dictionary<CArtist, decimal> suggestionIntensities = new Dictionary<CArtist, decimal>();
             foreach (KeyValuePair<CArtist, CArtistScore> item in artistScores)
