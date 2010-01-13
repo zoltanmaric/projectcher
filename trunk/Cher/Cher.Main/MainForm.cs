@@ -41,11 +41,18 @@ namespace Cher.Main
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = 99;
+            
             xusers = LFMXMLReader.ReadXUsersFromXML();
 
+            progressBar1.Value = progressBar1.Minimum;
             users = factory.LoadUsers();
+            progressBar1.Value += 30;
             artists = factory.LoadArtists();
+            progressBar1.Value += 30;
             factory.LoadUserArtists(users, artists);
+            progressBar1.Value += 30;
 
             orderedUsers = (from u in users
                            orderby u.UserName
@@ -56,6 +63,7 @@ namespace Cher.Main
             usersLstBox.DataSource = orderedUsers;
 
             sm = new SimilarityMatrix(users);
+            progressBar1.Value = progressBar1.Maximum;
             btnRecommend.Enabled = true;
         }
 
