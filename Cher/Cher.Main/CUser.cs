@@ -78,31 +78,28 @@ namespace Cher.Main
             return userName;
         }
 
-        public List<CUser> FindNeighbours(SimilarityMatrix similarityMatrix, List<CUser> paramAllUsers, int paramSize)
+        public List<CUser> FindNeighbours(SimilarityMatrix similarityMatrix, List<CUser> paramAllUsers, int paramSize, decimal wk, decimal we)
         {
-            if (neighbours == null)
+            decimal[] similarities = similarityMatrix.GetSimilaritiesRow(userIndex);
+
+            Dictionary<CUser, decimal> similarityDict = new Dictionary<CUser, decimal>();
+
+            for (int i = 0; i < paramAllUsers.Count; i++)
             {
-                decimal[] similarities = similarityMatrix.GetSimilaritiesRow(userIndex);
-
-                Dictionary<CUser, decimal> similarityDict = new Dictionary<CUser, decimal>();
-
-                for (int i = 0; i < paramAllUsers.Count; i++)
-                {
-                    similarityDict.Add(paramAllUsers[i], similarities[i]);
-                }
-
-                neighbours = (from simi in similarityDict
-                              orderby simi.Value descending
-                              select simi.Key).Take(paramSize).ToList();
+                similarityDict.Add(paramAllUsers[i], similarities[i]);
             }
+
+            neighbours = (from simi in similarityDict
+                          orderby simi.Value descending
+                          select simi.Key).Take(paramSize).ToList();
 
             return neighbours;
         }
 
         public List<CArtist> Suggestions(int numOfSuggestions)
         {
-            const decimal w1 = 0.25M;   // utjecaj broja susjeda koji slušaju danog artista
-            const decimal w2 = 0.75M;   // utjecaj ocjena pojedinog susjeda za danog artista
+            const decimal w1 = 0.75M;   // utjecaj broja susjeda koji slušaju danog artista
+            const decimal w2 = 0.25M;   // utjecaj ocjena pojedinog susjeda za danog artista
 
             List<CArtist> ngbArtists = new List<CArtist>();
             Dictionary<CArtist, CArtistScore> artistScores = new Dictionary<CArtist,CArtistScore>();
