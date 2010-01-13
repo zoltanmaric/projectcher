@@ -16,6 +16,8 @@ namespace Cher.Main
         List<CUser> orderedUsers;
         List<CArtist> artists;
 
+        List<XUser> xusers;
+        
         SimilarityMatrix sm;
 
         public MainForm()
@@ -30,6 +32,8 @@ namespace Cher.Main
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            xusers = LFMXMLReader.ReadXUsersFromXML();
+
             users = factory.LoadUsers();
             artists = factory.LoadArtists();
             factory.LoadUserArtists(users, artists);
@@ -70,8 +74,16 @@ namespace Cher.Main
             List<CArtist> suggs = mainFrameUser.Suggestions(numOfRecArtists);
 
             lsbRecArtists.DisplayMember = "ArtistName";
-            lsbRecArtists.DataSource = suggs;            
+            //lsbRecArtists.DataSource = suggs;
+            lsbRecArtists.DataSource = suggs.OrderBy(s => s.ArtistName).ToList();
 
+            XUser xMainFrameUser = xusers.Find(u => u.UserName == mainFrameUser.UserName);
+            if (xMainFrameUser != null)
+            {
+                //lsbLastFMArtists.DataSource = xMainFrameUser.XArtists.Sort();
+                xMainFrameUser.XArtists.Sort();
+                lsbLastFMArtists.DataSource = xMainFrameUser.XArtists;
+            }
         }
 
         private void btnXMLTest_Click(object sender, EventArgs e)
@@ -83,7 +95,6 @@ namespace Cher.Main
     public class XUser
     {
         string userName = "";
-
         List<string> xArtists;
 
         public XUser(string username)
@@ -103,5 +114,13 @@ namespace Cher.Main
             get { return xArtists; }
             set { xArtists = value; }
         }
+
+        public string UserName
+        {
+            get { return userName; }
+            set { userName = value; }
+        }
+
+        
     }
 }
