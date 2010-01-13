@@ -78,7 +78,7 @@ namespace Cher.Main
             return userName;
         }
 
-        public List<CUser> FindNeighbours(SimilarityMatrix similarityMatrix, List<CUser> paramAllUsers, int paramSize, decimal wk, decimal we)
+        public List<CUser> FindNeighbours(SimilarityMatrix similarityMatrix, List<CUser> paramAllUsers, int paramSize)
         {
             decimal[] similarities = similarityMatrix.GetSimilaritiesRow(userIndex);
 
@@ -96,11 +96,8 @@ namespace Cher.Main
             return neighbours;
         }
 
-        public List<CArtist> Suggestions(int numOfSuggestions)
+        public List<CArtist> Suggestions(int numOfSuggestions, decimal wk, decimal we)
         {
-            const decimal w1 = 0.75M;   // utjecaj broja susjeda koji slušaju danog artista
-            const decimal w2 = 0.25M;   // utjecaj ocjena pojedinog susjeda za danog artista
-
             List<CArtist> ngbArtists = new List<CArtist>();
             Dictionary<CArtist, CArtistScore> artistScores = new Dictionary<CArtist,CArtistScore>();
 
@@ -130,7 +127,7 @@ namespace Cher.Main
             foreach (KeyValuePair<CArtist, CArtistScore> item in artistScores)
             {
                 item.Value.Score = item.Value.Score / item.Value.NumOfFans;
-                decimal suggestionIntensity = w1 * item.Value.NumOfFans + w2 * item.Value.Score;
+                decimal suggestionIntensity = wk * item.Value.NumOfFans + we * item.Value.Score;
                 suggestionIntensities.Add(item.Key, suggestionIntensity);
             }
 

@@ -45,7 +45,6 @@ namespace Cher.Main
                 }
             }
 
-            int numSimilar = 0;
             decimal score = 0;
             decimal sumSquares1 = 0, sumSquares2 = 0;
             foreach (CArtist artist in intersection)

@@ -29,6 +29,7 @@ namespace Cher.Main
         public MainForm()
         {
             InitializeComponent();
+            btnRecommend.Enabled = false;
 
             factory = new CherFactory();
 
@@ -54,7 +55,8 @@ namespace Cher.Main
             usersLstBox.DisplayMember = "UserName";
             usersLstBox.DataSource = orderedUsers;
 
-            sm = new SimilarityMatrix(users);            
+            sm = new SimilarityMatrix(users);
+            btnRecommend.Enabled = true;
         }
 
         private void btnRecommend_Click(object sender, EventArgs e)
@@ -114,22 +116,22 @@ namespace Cher.Main
 
             if (txtWk.Text != "")
             {
-                wk = Convert.ToInt32(txtWk.Text);
+                wk = Convert.ToDecimal(txtWk.Text);
             }
 
             if (txtWe.Text != "")
             {
-                we = Convert.ToInt32(txtWe.Text);
+                we = Convert.ToDecimal(txtWe.Text);
             }
 
             mainFrameUser = usersLstBox.SelectedItem as CUser;
 
-            mainFrameUser.FindNeighbours(sm, users, neighSize, wk, we);
+            mainFrameUser.FindNeighbours(sm, users, neighSize);
 
             lsbNeigh.DisplayMember = "UserName";
             lsbNeigh.DataSource = mainFrameUser.Neighbours;
 
-            recommendedArtists = mainFrameUser.Suggestions(numOfRecArtists);
+            recommendedArtists = mainFrameUser.Suggestions(numOfRecArtists, wk, we);
 
 
             lsbRecArtists.DisplayMember = "ArtistName";
