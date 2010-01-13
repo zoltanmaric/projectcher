@@ -8,6 +8,7 @@ using System.IO;
 using System.Data.SqlClient;
 using Lastfm.Services;
 using System.Configuration;
+using System.Xml.Linq;
 
 namespace Cher.DataLoad
 {
@@ -873,7 +874,7 @@ namespace Cher.DataLoad
             }
             catch (Exception ex)
             {
-                if (ex.Message == "InvalidParameters: No user with that name")  return "nema tog korisnika na lfmu";
+                if (ex.Message == "InvalidParameters: No user with that name")  return "korisnika nema na last.fmu";
                 topArtists = oneUser.GetTopArtists();
             }
             
@@ -895,7 +896,7 @@ namespace Cher.DataLoad
                 InsertUsersArtist(userID, artistID, ta.Weight);                
             }
 
-            return result;
+            return "success";
         }
 
         public bool ArtistExistsInDB(string artistName)
@@ -962,6 +963,27 @@ namespace Cher.DataLoad
             }
 
             return false;
+        }
+
+        public void InsertFromXML()
+        {
+            string file = "lastfm_29.xml";
+            XDocument xfm = XDocument.Load(file);
+
+            var xmlUsers = from u in xfm.Descendants("user")
+                           select u.Attribute("name").Value.ToString();
+
+            List<string> users = xmlUsers.ToList();
+
+            
+            foreach (string user in users)
+            {
+                if (!UserExistsInDB(user))
+                {
+                    string result = FillOneUser(user);                    
+                }
+            } 
+            
         }
     }
 

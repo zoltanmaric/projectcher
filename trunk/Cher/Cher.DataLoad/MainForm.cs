@@ -82,6 +82,11 @@ namespace Cher.DataLoad
             if (!loader.UserExistsInDB(username))
             {
                 string result = loader.FillOneUser(username);
+                lblStatus.Text = result;
+            }
+            else
+            {
+                lblStatus.Text = "korisnik je vec u bazi";
             }
             
 
@@ -90,6 +95,11 @@ namespace Cher.DataLoad
             string time = timeSpan.ToString();
 
             int baba = 0;
+        }
+
+        private void btnAddXML_Click(object sender, EventArgs e)
+        {
+            loader.InsertFromXML();
         }
     }
 }

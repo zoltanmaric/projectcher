@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.txtUserName = new System.Windows.Forms.TextBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.btnAddXML = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnQuick
@@ -88,11 +90,32 @@
             this.txtUserName.Size = new System.Drawing.Size(243, 20);
             this.txtUserName.TabIndex = 4;
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(300, 225);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(35, 13);
+            this.lblStatus.TabIndex = 5;
+            this.lblStatus.Text = "status";
+            // 
+            // btnAddXML
+            // 
+            this.btnAddXML.Location = new System.Drawing.Point(12, 268);
+            this.btnAddXML.Name = "btnAddXML";
+            this.btnAddXML.Size = new System.Drawing.Size(87, 23);
+            this.btnAddXML.TabIndex = 6;
+            this.btnAddXML.Text = "Add from XML";
+            this.btnAddXML.UseVisualStyleBackColor = true;
+            this.btnAddXML.Click += new System.EventHandler(this.btnAddXML_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 459);
+            this.Controls.Add(this.btnAddXML);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rtbError);
@@ -114,6 +137,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Button btnAddXML;
     }
 }
 
