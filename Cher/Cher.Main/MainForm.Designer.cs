@@ -61,6 +61,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtWk = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -353,11 +354,19 @@
             this.label14.TabIndex = 15;
             this.label14.Text = "wk:";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(228, 484);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(325, 24);
+            this.progressBar1.TabIndex = 19;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 568);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.txtWe);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtWk);
@@ -421,5 +430,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtWk;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
