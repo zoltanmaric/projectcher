@@ -40,8 +40,8 @@ namespace Cher.Main
                                    where (u.UserName == "Oblachica")
                                    select u).First();
 
-            mainFrameUser.FindNeighbours(sm, users, numberOfNeighbours, wk, we);
-            List<CArtist> suggs = mainFrameUser.Suggestions(numberOfSuggestions);
+            mainFrameUser.FindNeighbours(sm, users, numberOfNeighbours);
+            List<CArtist> suggs = mainFrameUser.Suggestions(numberOfSuggestions, wk, we);
 
             int babetinga = 0;
         }
