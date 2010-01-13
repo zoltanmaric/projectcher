@@ -72,12 +72,15 @@ namespace Cher.Main
             evaluator.AddUserWithRecommendations(mainFrameUser, recommendedArtists, lfmRecommendedArtists);
             Results resultsA = evaluator.CalculateResultsA();
 
-            txtMacroPrecision.Text = resultsA.MacroPrecision.ToString();
-            txtMacroRecall.Text = resultsA.MacroRecall.ToString();
-            txtMacroF1.Text = resultsA.MacroF1.ToString();
-            txtMicroPrecision.Text = resultsA.MicroPrecision.ToString();
-            txtMicroRecall.Text = resultsA.MicroRecall.ToString();
-            txtMicroF1.Text = resultsA.MicroF1.ToString();
+            if (resultsA != null)
+            {
+                txtMacroPrecision.Text = resultsA.MacroPrecision.ToString();
+                txtMacroRecall.Text = resultsA.MacroRecall.ToString();
+                txtMacroF1.Text = resultsA.MacroF1.ToString();
+                txtMicroPrecision.Text = resultsA.MicroPrecision.ToString();
+                txtMicroRecall.Text = resultsA.MicroRecall.ToString();
+                txtMicroF1.Text = resultsA.MicroF1.ToString();
+            }
                 
         }
 
