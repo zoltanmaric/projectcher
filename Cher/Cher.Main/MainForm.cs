@@ -20,6 +20,10 @@ namespace Cher.Main
         
         SimilarityMatrix sm;
 
+        CUser mainFrameUser;
+        List<CArtist> recommendedArtists;
+        List<string> lfmRecommendedArtists;
+
         public MainForm()
         {
             InitializeComponent();
@@ -51,6 +55,34 @@ namespace Cher.Main
 
         private void btnRecommend_Click(object sender, EventArgs e)
         {
+            Recommend();
+
+            Evaluate();
+        }
+
+        private void Evaluate()
+        {
+            if (lfmRecommendedArtists == null)
+            {
+                lblEvaluation.Text = "No Last.FM recommendations found";
+                return;
+            }
+
+            Evaluator evaluator = new Evaluator();
+            evaluator.AddUserWithRecommendations(mainFrameUser, recommendedArtists, lfmRecommendedArtists);
+            Results resultsA = evaluator.CalculateResultsA();
+
+            txtMacroPrecision.Text = resultsA.MacroPrecision.ToString();
+            txtMacroRecall.Text = resultsA.MacroRecall.ToString();
+            txtMacroF1.Text = resultsA.MacroF1.ToString();
+            txtMicroPrecision.Text = resultsA.MicroPrecision.ToString();
+            txtMicroRecall.Text = resultsA.MicroRecall.ToString();
+            txtMicroF1.Text = resultsA.MicroF1.ToString();
+                
+        }
+
+        private void Recommend()
+        {
             int neighSize = 20;
             int numOfRecArtists = 10;
 
@@ -58,35 +90,38 @@ namespace Cher.Main
             {
                 neighSize = Convert.ToInt32(txtNeighSize.Text);
             }
-            
+
             if (txtArtistSize.Text != "")
             {
                 numOfRecArtists = Convert.ToInt32(txtArtistSize.Text);
             }
 
-            CUser mainFrameUser = usersLstBox.SelectedItem as CUser;
+            mainFrameUser = usersLstBox.SelectedItem as CUser;
 
             mainFrameUser.FindNeighbours(sm, users, neighSize);
-            
-            lsbNeigh.DisplayMember = "UserName";
-            lsbNeigh.DataSource = mainFrameUser.Neighbours;            
 
-            List<CArtist> suggs = mainFrameUser.Suggestions(numOfRecArtists);
+            lsbNeigh.DisplayMember = "UserName";
+            lsbNeigh.DataSource = mainFrameUser.Neighbours;
+
+            recommendedArtists = mainFrameUser.Suggestions(numOfRecArtists);
+
 
             lsbRecArtists.DisplayMember = "ArtistName";
             //lsbRecArtists.DataSource = suggs;
-            lsbRecArtists.DataSource = suggs.OrderBy(s => s.ArtistName).ToList();
+            lsbRecArtists.DataSource = recommendedArtists.OrderBy(s => s.ArtistName).ToList();
 
             XUser xMainFrameUser = xusers.Find(u => u.UserName == mainFrameUser.UserName);
             if (xMainFrameUser != null)
             {
+                lfmRecommendedArtists = xMainFrameUser.XArtists;
                 //lsbLastFMArtists.DataSource = xMainFrameUser.XArtists.Sort();
-                xMainFrameUser.XArtists.Sort();
+                lfmRecommendedArtists.Sort();
                 lsbLastFMArtists.DataSource = xMainFrameUser.XArtists;
             }
             else
             {
-                lsbLastFMArtists.DataSource = null;            
+                lfmRecommendedArtists = null;
+                lsbLastFMArtists.DataSource = null;
             }
         }
 
