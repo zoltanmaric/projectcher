@@ -30,8 +30,8 @@ namespace Cher.Main
 
             factory = new CherFactory();
 
-            txtArtistSize.Text = "20";
-            txtNeighSize.Text = "20";
+            txtArtistSize.Text = "40";
+            txtNeighSize.Text = "30";
         }
 
         private void btnStart_Click(object sender, EventArgs e)

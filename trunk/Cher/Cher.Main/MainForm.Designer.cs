@@ -44,19 +44,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblEvaluation = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtMacroRecall = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtMacroPrecision = new System.Windows.Forms.TextBox();
             this.txtMacroF1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtMicroPrecision = new System.Windows.Forms.TextBox();
-            this.txtMacroRecall = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtMicroF1 = new System.Windows.Forms.TextBox();
             this.txtMicroRecall = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtMicroPrecision = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,7 +183,7 @@
             // lblEvaluation
             // 
             this.lblEvaluation.AutoSize = true;
-            this.lblEvaluation.Location = new System.Drawing.Point(12, 36);
+            this.lblEvaluation.Location = new System.Drawing.Point(91, 10);
             this.lblEvaluation.Name = "lblEvaluation";
             this.lblEvaluation.Size = new System.Drawing.Size(35, 13);
             this.lblEvaluation.TabIndex = 13;
@@ -191,13 +191,14 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.txtMicroF1);
             this.panel1.Controls.Add(this.txtMicroRecall);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.txtMicroPrecision);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.txtMacroRecall);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -205,15 +206,31 @@
             this.panel1.Controls.Add(this.txtMacroPrecision);
             this.panel1.Controls.Add(this.lblEvaluation);
             this.panel1.Controls.Add(this.txtMacroF1);
-            this.panel1.Location = new System.Drawing.Point(905, 58);
+            this.panel1.Location = new System.Drawing.Point(228, 432);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(157, 368);
+            this.panel1.Size = new System.Drawing.Size(671, 120);
             this.panel1.TabIndex = 14;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 68);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Macro Recall";
+            // 
+            // txtMacroRecall
+            // 
+            this.txtMacroRecall.Location = new System.Drawing.Point(109, 61);
+            this.txtMacroRecall.Name = "txtMacroRecall";
+            this.txtMacroRecall.Size = new System.Drawing.Size(35, 20);
+            this.txtMacroRecall.TabIndex = 16;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 70);
+            this.label8.Location = new System.Drawing.Point(13, 38);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 13);
             this.label8.TabIndex = 15;
@@ -222,7 +239,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 126);
+            this.label7.Location = new System.Drawing.Point(13, 94);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 15;
@@ -231,95 +248,80 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(12, 10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "Evaluation";
             // 
             // txtMacroPrecision
             // 
-            this.txtMacroPrecision.Location = new System.Drawing.Point(108, 67);
+            this.txtMacroPrecision.Location = new System.Drawing.Point(109, 35);
             this.txtMacroPrecision.Name = "txtMacroPrecision";
             this.txtMacroPrecision.Size = new System.Drawing.Size(35, 20);
             this.txtMacroPrecision.TabIndex = 12;
             // 
             // txtMacroF1
             // 
-            this.txtMacroF1.Location = new System.Drawing.Point(108, 119);
+            this.txtMacroF1.Location = new System.Drawing.Point(109, 87);
             this.txtMacroF1.Name = "txtMacroF1";
             this.txtMacroF1.Size = new System.Drawing.Size(35, 20);
             this.txtMacroF1.TabIndex = 10;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 148);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 13);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Micro Precision";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 100);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 13);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Macro Recall";
-            // 
-            // txtMicroPrecision
-            // 
-            this.txtMicroPrecision.Location = new System.Drawing.Point(108, 145);
-            this.txtMicroPrecision.Name = "txtMicroPrecision";
-            this.txtMicroPrecision.Size = new System.Drawing.Size(35, 20);
-            this.txtMicroPrecision.TabIndex = 17;
-            // 
-            // txtMacroRecall
-            // 
-            this.txtMacroRecall.Location = new System.Drawing.Point(108, 93);
-            this.txtMacroRecall.Name = "txtMacroRecall";
-            this.txtMacroRecall.Size = new System.Drawing.Size(35, 20);
-            this.txtMacroRecall.TabIndex = 16;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 204);
+            this.label11.Location = new System.Drawing.Point(193, 91);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(48, 13);
-            this.label11.TabIndex = 22;
+            this.label11.TabIndex = 28;
             this.label11.Text = "Micro F1";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 178);
+            this.label12.Location = new System.Drawing.Point(193, 65);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 13);
-            this.label12.TabIndex = 23;
+            this.label12.TabIndex = 29;
             this.label12.Text = "Micro Recall";
             // 
             // txtMicroF1
             // 
-            this.txtMicroF1.Location = new System.Drawing.Point(108, 201);
+            this.txtMicroF1.Location = new System.Drawing.Point(289, 88);
             this.txtMicroF1.Name = "txtMicroF1";
             this.txtMicroF1.Size = new System.Drawing.Size(35, 20);
-            this.txtMicroF1.TabIndex = 21;
+            this.txtMicroF1.TabIndex = 27;
             // 
             // txtMicroRecall
             // 
-            this.txtMicroRecall.Location = new System.Drawing.Point(108, 171);
+            this.txtMicroRecall.Location = new System.Drawing.Point(289, 58);
             this.txtMicroRecall.Name = "txtMicroRecall";
             this.txtMicroRecall.Size = new System.Drawing.Size(35, 20);
-            this.txtMicroRecall.TabIndex = 20;
+            this.txtMicroRecall.TabIndex = 26;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(193, 35);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 13);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Micro Precision";
+            // 
+            // txtMicroPrecision
+            // 
+            this.txtMicroPrecision.Location = new System.Drawing.Point(289, 32);
+            this.txtMicroPrecision.Name = "txtMicroPrecision";
+            this.txtMicroPrecision.Size = new System.Drawing.Size(35, 20);
+            this.txtMicroPrecision.TabIndex = 24;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1074, 516);
+            this.ClientSize = new System.Drawing.Size(913, 568);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtArtistSize);
             this.Controls.Add(this.label3);
@@ -367,13 +369,13 @@
         private System.Windows.Forms.TextBox txtMacroPrecision;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtMacroRecall;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtMicroF1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtMicroPrecision;
-        private System.Windows.Forms.TextBox txtMacroRecall;
         private System.Windows.Forms.TextBox txtMicroRecall;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtMicroPrecision;
     }
 }
