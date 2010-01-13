@@ -46,11 +46,18 @@ namespace Cher.Main
             }
 
             int numSimilar = 0;
-            decimal score = 0;
+            long score = 0;
+            long sumSquares1 = 0, sumSquares2 = 0;
             foreach (CArtist artist in intersection)
             {
-                score += cUser1.GetArtistScore(artist.ArtistName) * cUser2.GetArtistScore(artist.ArtistName);
+                long userScore1 = cUser1.GetArtistScore(artist.ArtistName);
+                long userScore2 = cUser2.GetArtistScore(artist.ArtistName);
+                score += userScore1 * userScore2;
+                sumSquares1 += userScore1 * userScore1;
+                sumSquares2 += userScore2 * userScore2;
             }
+
+            score = (long)((double)score / (Math.Sqrt((double)sumSquares1) * Math.Sqrt((double)sumSquares2)));
 
             return score;
         }
