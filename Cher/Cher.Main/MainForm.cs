@@ -34,6 +34,8 @@ namespace Cher.Main
 
             txtArtistSize.Text = "40";
             txtNeighSize.Text = "30";
+            txtWk.Text = "0.5";
+            txtWe.Text = "0.5";        
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -97,6 +99,8 @@ namespace Cher.Main
         {
             int neighSize = 20;
             int numOfRecArtists = 10;
+            decimal wk = 0.5M;
+            decimal we = 0.5M;
 
             if (txtNeighSize.Text != "")
             {
@@ -108,9 +112,19 @@ namespace Cher.Main
                 numOfRecArtists = Convert.ToInt32(txtArtistSize.Text);
             }
 
+            if (txtWk.Text != "")
+            {
+                wk = Convert.ToInt32(txtWk.Text);
+            }
+
+            if (txtWe.Text != "")
+            {
+                we = Convert.ToInt32(txtWe.Text);
+            }
+
             mainFrameUser = usersLstBox.SelectedItem as CUser;
 
-            mainFrameUser.FindNeighbours(sm, users, neighSize);
+            mainFrameUser.FindNeighbours(sm, users, neighSize, wk, we);
 
             lsbNeigh.DisplayMember = "UserName";
             lsbNeigh.DataSource = mainFrameUser.Neighbours;

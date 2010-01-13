@@ -21,23 +21,26 @@ namespace Cher.Main
         public TestForm()
         {
             InitializeComponent();
-
-            factory = new CherFactory();
-            users = factory.LoadUsers();
-            artists = factory.LoadArtists();
-            factory.LoadUserArtists(users, artists);
         }
 
         private void btnQuick_Click(object sender, EventArgs e)
         {
+            factory = new CherFactory();
+            users = factory.LoadUsers();
+            artists = factory.LoadArtists();
+            factory.LoadUserArtists(users, artists);
+            
             SimilarityMatrix sm = new SimilarityMatrix(users);
             //Neighbourhood.SimilarityMatrix = sm;
-            
+
+            decimal wk = 0.5M;
+            decimal we = 0.5M;
+
             CUser mainFrameUser = (from u in users
                                    where (u.UserName == "Oblachica")
                                    select u).First();
 
-            mainFrameUser.FindNeighbours(sm, users, numberOfNeighbours);
+            mainFrameUser.FindNeighbours(sm, users, numberOfNeighbours, wk, we);
             List<CArtist> suggs = mainFrameUser.Suggestions(numberOfSuggestions);
 
             int babetinga = 0;
