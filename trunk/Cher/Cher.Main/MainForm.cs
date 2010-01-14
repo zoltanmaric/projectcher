@@ -42,6 +42,8 @@ namespace Cher.Main
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            btnStart.Enabled = false;
+
             lblDBLoadStatus.Text = "Učitavam bazu...";
             lblDBLoadStatus.Show();
             this.Update();
@@ -158,6 +160,28 @@ namespace Cher.Main
                 lfmRecommendedArtists = null;
                 lsbLastFMArtists.DataSource = null;
             }
+        }
+
+        private void btnEval_Click(object sender, EventArgs e)
+        {
+            CalcAverageScores();
+
+            GenXMLForWeb();
+        }
+
+        private void CalcAverageScores()
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void GenXMLForWeb()
+        {
+            IEnumerable<CUser> cFriendUsers = from u in users
+                               where xusers.Where(xu => xu.UserName == u.UserName).Any()
+                               select u;
+
+            
+
         }
 
     }
