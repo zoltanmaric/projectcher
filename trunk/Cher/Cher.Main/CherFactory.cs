@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 using System.Data.SqlClient;
 
@@ -52,7 +53,7 @@ namespace Cher.Main
         private List<CUser> loadUserTable()
         {
             List<CUser> users = new List<CUser>();
-
+            
             string cmdText = @"select * from [CherDB].[dbo].[User]";
             SqlCommand command = new SqlCommand(cmdText, conn);
             SqlDataReader reader = command.ExecuteReader();
@@ -68,6 +69,7 @@ namespace Cher.Main
                 }
                 users.Add(new CUser(userID, index++, userName, url));
             }
+            reader.Close();
 
             return users;
         }
@@ -84,20 +86,9 @@ namespace Cher.Main
             {
                 int artistID = (int)reader["ArtistID"];
                 string artistName = (string)reader["ArtistName"];
-
-                string bio = null;
-                if (reader["Bio"] != System.DBNull.Value)
-                {
-                    bio = (string)reader["URL"];
-                }
-
-                string url = null;
-                if (reader["URL"] != System.DBNull.Value)
-                {
-                    url = (string)reader["URL"];
-                }
-                artists.Add(new CArtist(artistID, index++, artistName, bio, url));
+                artists.Add(new CArtist(artistID, index++, artistName));
             }
+            reader.Close();
 
             return artists;
         }
@@ -123,7 +114,6 @@ namespace Cher.Main
                 int numListens = (int)reader["Rank"];
                 // dodaj im reference
                 user.AddArtist(artist, numListens);
-                artist.AddUser(user);
             }
 
         }

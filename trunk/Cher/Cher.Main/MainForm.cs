@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Threading;
 
 
 namespace Cher.Main
@@ -33,26 +34,23 @@ namespace Cher.Main
 
             factory = new CherFactory();
 
-            txtArtistSize.Text = "40";
+            txtArtistSize.Text = "30";
             txtNeighSize.Text = "30";
             txtWk.Text = "0.5";
-            txtWe.Text = "0.5";        
+            txtWe.Text = "0.5";
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            progressBar1.Minimum = 0;
-            progressBar1.Maximum = 99;
+            lblDBLoadStatus.Text = "Učitavam bazu...";
+            lblDBLoadStatus.Show();
+            this.Update();
             
             xusers = LFMXMLReader.ReadXUsersFromXML();
 
-            progressBar1.Value = progressBar1.Minimum;
             users = factory.LoadUsers();
-            progressBar1.Value += 30;
             artists = factory.LoadArtists();
-            progressBar1.Value += 30;
             factory.LoadUserArtists(users, artists);
-            progressBar1.Value += 30;
 
             orderedUsers = (from u in users
                            orderby u.UserName
@@ -63,8 +61,9 @@ namespace Cher.Main
             usersLstBox.DataSource = orderedUsers;
 
             sm = new SimilarityMatrix(users);
-            progressBar1.Value = progressBar1.Maximum;
             btnRecommend.Enabled = true;
+
+            lblDBLoadStatus.Text = "Gotovo!";
         }
 
         private void btnRecommend_Click(object sender, EventArgs e)
@@ -78,7 +77,7 @@ namespace Cher.Main
 
         private void GenerateXMLForUser()
         {
-            //XDocument xdoc = new XDocument(    
+                
         }
 
         private void Evaluate()
@@ -160,7 +159,6 @@ namespace Cher.Main
                 lsbLastFMArtists.DataSource = null;
             }
         }
-
 
     }
 
