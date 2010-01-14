@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Threading;
+using System.Xml;
 
 
 namespace Cher.Main
@@ -164,6 +165,51 @@ namespace Cher.Main
 
         private void btnEval_Click(object sender, EventArgs e)
         {
+            IEnumerable<CUser> cFriendUsers = from u in users
+                                              where xusers.Where(xu => xu.UserName == u.UserName).Any()
+                                              select u;
+
+            Evaluator eval = new Evaluator();
+            XDocument xmlDoc = new XDocument();
+            XElement root = new XElement("users");
+
+            foreach (CUser user in cFriendUsers)
+            {
+                user.FindNeighbours(sm, users, int.Parse(txtNeighSize.Text));
+                List<CArtist> suggs = user.Suggestions(30, decimal.Parse(txtWk.Text), decimal.Parse(txtWe.Text));
+
+                XUser xuser = (from xu in xusers
+                               where xu.UserName == user.UserName
+                               select xu).First();
+
+                eval.AddUserWithRecommendations(user, suggs, xuser.XArtists);
+
+                XElement xmluser = new XElement("user");
+                XAttribute username = new XAttribute("username", user.UserName);
+                xmluser.SetAttributeValue("username", user.UserName);
+
+                foreach (CArtist sugg in suggs)
+                {
+                    XElement xmlsugg = new XElement("artist", sugg.ArtistName);
+                    xmluser.Add(xmlsugg);
+                }
+
+                root.Add(xmluser);                
+            }
+            xmlDoc.Add(root);
+
+            xmlDoc.Save("cher_preporuke.xml");
+
+            Results resultsA = eval.CalculateResultsA();
+
+            txtMacroPrecision.Text = resultsA.MacroPrecision.ToString();
+            txtMacroRecall.Text = resultsA.MacroRecall.ToString();
+            txtMacroF1.Text = resultsA.MacroF1.ToString();
+            txtMicroPrecision.Text = resultsA.MicroPrecision.ToString();
+            txtMicroRecall.Text = resultsA.MicroRecall.ToString();
+            txtMicroF1.Text = resultsA.MicroF1.ToString();
+
+
             CalcAverageScores();
 
             GenXMLForWeb();
@@ -171,16 +217,14 @@ namespace Cher.Main
 
         private void CalcAverageScores()
         {
-            //throw new NotImplementedException();
+
         }
 
         private void GenXMLForWeb()
         {
-            IEnumerable<CUser> cFriendUsers = from u in users
-                               where xusers.Where(xu => xu.UserName == u.UserName).Any()
-                               select u;
 
-            
+
+
 
         }
 

@@ -37,7 +37,7 @@ namespace Cher.Main
                 //if (cherovePreporuke.Count != lastFMovePreporuke.Count)
                 //    return null;
 
-                // Za jednog korisnika
+                // Za jednog korisnika5
                 int thisTruePositives = 0;
                 int thisFalsePositives = 0;
                 int thisFalseNegatives = 0;
@@ -61,9 +61,10 @@ namespace Cher.Main
 
                 double thisPrecision = (double)thisTruePositives /(thisTruePositives+thisFalsePositives); // jel ovo dobro casta sve u double?
                 double thisRecall = (double)thisTruePositives / (thisTruePositives + thisFalseNegatives);
-                double thisF1 = 2 * thisPrecision * thisRecall / (thisPrecision + thisRecall);
+                double thisF1 = ((thisPrecision != 0.0) || (thisRecall != 0.0)) ? 2 * thisPrecision * thisRecall / (thisPrecision + thisRecall) : 0.0;
 
                 // Ovo ćemo koristiti za makro-usrednjavanje na kraju.
+                
                 sumPrecision += thisPrecision;
                 sumRecall += thisRecall;
                 sumF1 += thisF1;
@@ -75,7 +76,7 @@ namespace Cher.Main
             }
 
             // Gotove makro-usrednjene vrijednosti
-                double macroAveragedPrecision = sumPrecision / users.Count;
+            double macroAveragedPrecision = sumPrecision / users.Count;
             double macroAveragedRecall = sumRecall / users.Count;
             double macroAveragedF1 = sumF1 / users.Count;
 
@@ -87,7 +88,7 @@ namespace Cher.Main
             // Gotove mikro-usrednjene vrijednosti
             double microAveragedPrecision = sumTruePositivesD / (sumTruePositivesD + sumFalsePositivesD); // jel ovo dobro casta sve u double?
             double microAveragedRecall = sumTruePositivesD / (sumTruePositivesD + sumFalseNegativesD);
-            double microAveragedF1 = 2 * microAveragedPrecision * microAveragedRecall / (microAveragedPrecision + microAveragedRecall);
+            double microAveragedF1 = ((microAveragedPrecision != 0.0) || (microAveragedRecall != 0.0)) ? 2 * microAveragedPrecision * microAveragedRecall / (microAveragedPrecision + microAveragedRecall) : 0.0;
 
             Results r = new Results(macroAveragedPrecision, macroAveragedRecall, macroAveragedF1,
                                     microAveragedPrecision, microAveragedRecall, microAveragedF1);
