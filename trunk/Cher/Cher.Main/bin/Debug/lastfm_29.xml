@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <lastfm_preporuke>
 
@@ -842,12 +842,12 @@
 	<preporuka_benda>Colonia</preporuka_benda>
 	<preporuka_benda>Atomsko Sklonište</preporuka_benda>
 	<preporuka_benda>Luky</preporuka_benda>
-	<preporuka_benda>Bajaga &amp;amp; Instruktori</preporuka_benda>
+	<preporuka_benda>Bajaga &amp; Instruktori</preporuka_benda>
 	<preporuka_benda>Rani mraz</preporuka_benda>
 	<preporuka_benda>Luka Nižetić</preporuka_benda>
 	<preporuka_benda>Neverne Bebe</preporuka_benda>
 	<preporuka_benda>Danijela</preporuka_benda>
-	<preporuka_benda>Urban &amp;amp; 4</preporuka_benda>
+	<preporuka_benda>Urban &amp; 4</preporuka_benda>
 	<preporuka_benda>Piloti</preporuka_benda>
 	<preporuka_benda>Djavoli</preporuka_benda>
 	<preporuka_benda>Thompson</preporuka_benda>
@@ -906,7 +906,7 @@
 	<preporuka_benda>The Killers</preporuka_benda>
 	<preporuka_benda>Incubus</preporuka_benda>
 	<preporuka_benda>Young Jeezy</preporuka_benda>
-	<preporuka_benda>Birdman &amp;amp; Lil' Wayne</preporuka_benda>
+	<preporuka_benda>Birdman &amp; Lil' Wayne</preporuka_benda>
 	<preporuka_benda>Tyga</preporuka_benda>
 	<preporuka_benda>Ludacris &amp;amp; Shawnna</preporuka_benda>
 	<preporuka_benda>Birdman</preporuka_benda>
@@ -938,7 +938,7 @@
 	<preporuka_benda>Dječaci</preporuka_benda>
 	<preporuka_benda>Postolar Tripper</preporuka_benda>
 	<preporuka_benda>Connect</preporuka_benda>
-	<preporuka_benda>Urban &amp;amp; 4</preporuka_benda>
+	<preporuka_benda>Urban &amp; 4</preporuka_benda>
 	<preporuka_benda>Laufer</preporuka_benda>
 	<preporuka_benda>Natali Dizdar</preporuka_benda>
 	<preporuka_benda>St!llness</preporuka_benda>
@@ -960,5 +960,200 @@
 	<preporuka_benda>Klapa Crikvenica</preporuka_benda>
 	<preporuka_benda>The Strange</preporuka_benda>
   </user>
-</lastfm_preporuke>
+ 
+  <user name="Proleterka">
+    <preporuka_benda>Zabranjeno Pušenje</preporuka_benda>
+	<preporuka_benda>Crvena Jabuka</preporuka_benda>
+	<preporuka_benda>Riblja Čorba</preporuka_benda>
+	<preporuka_benda>Divlje Jagode</preporuka_benda>
+	<preporuka_benda>Prljavo Kazalište</preporuka_benda>
+	<preporuka_benda>Azra</preporuka_benda>
+	<preporuka_benda>Indexi</preporuka_benda>
+	<preporuka_benda>Aerodrom</preporuka_benda>
+	<preporuka_benda>Zdravko Colic</preporuka_benda>
+	<preporuka_benda>Galija</preporuka_benda>
+	<preporuka_benda>Atomsko Sklonište</preporuka_benda>
+	<preporuka_benda>Piloti</preporuka_benda>
+	<preporuka_benda>Parni Valjak</preporuka_benda>
+	<preporuka_benda>Generacija 5</preporuka_benda>
+	<preporuka_benda>Van Gogh</preporuka_benda>
+	<preporuka_benda>Dino Dvornik</preporuka_benda>
+	<preporuka_benda>YU Grupa</preporuka_benda>
+	<preporuka_benda>Majke</preporuka_benda>
+	<preporuka_benda>Let 3</preporuka_benda>
+	<preporuka_benda>Poslednja igra leptira</preporuka_benda>
+	<preporuka_benda>Bajaga &amp; Instruktori</preporuka_benda>
+	<preporuka_benda>Novi Fosili</preporuka_benda>
+	<preporuka_benda>Jinx</preporuka_benda>
+	<preporuka_benda>Laufer</preporuka_benda>
+	<preporuka_benda>Neno Belan</preporuka_benda>
+	<preporuka_benda>Električni Orgazam</preporuka_benda>
+	<preporuka_benda>Luky</preporuka_benda>
+	<preporuka_benda>Natali Dizdar</preporuka_benda>
+	<preporuka_benda>Kerber</preporuka_benda>
+	<preporuka_benda>Haustor</preporuka_benda>       
+  </user>
+      
+  <user name="cipelica">
+    <preporuka_benda>Galija</preporuka_benda>
+	<preporuka_benda>Riblja Čorba</preporuka_benda>
+	<preporuka_benda>Generacija 5</preporuka_benda>
+	<preporuka_benda>Psihomodo Pop</preporuka_benda>
+	<preporuka_benda>Neno Belan</preporuka_benda>
+	<preporuka_benda>Jura Stublić &amp; Film</preporuka_benda>
+	<preporuka_benda>Van Gogh</preporuka_benda>
+	<preporuka_benda>Luky</preporuka_benda>
+	<preporuka_benda>Neverne Bebe</preporuka_benda>
+	<preporuka_benda>Hari Roncevic</preporuka_benda>
+	<preporuka_benda>Rani mraz</preporuka_benda>
+	<preporuka_benda>Bajaga &amp; Instruktori</preporuka_benda>
+	<preporuka_benda>Piloti</preporuka_benda>
+	<preporuka_benda>Plavi Orkestar</preporuka_benda>
+	<preporuka_benda>John Lee Hooker</preporuka_benda>
+	<preporuka_benda>Let 3</preporuka_benda>
+	<preporuka_benda>Giuliano</preporuka_benda>
+	<preporuka_benda>Mišo Kovač</preporuka_benda>
+	<preporuka_benda>Kerber</preporuka_benda>
+	<preporuka_benda>PETAR GRASO</preporuka_benda>
+	<preporuka_benda>Muddy Waters</preporuka_benda>
+	<preporuka_benda>Goran Karan</preporuka_benda>
+	<preporuka_benda>Djavoli</preporuka_benda>
+	<preporuka_benda>Doris Dragovic</preporuka_benda>
+	<preporuka_benda>Vatra</preporuka_benda>
+	<preporuka_benda>Poslednja igra leptira</preporuka_benda>
+	<preporuka_benda>Son House</preporuka_benda>
+	<preporuka_benda>Pips, Chips &amp; Videoclips</preporuka_benda>
+	<preporuka_benda>Colonia</preporuka_benda>
+	<preporuka_benda>Leadbelly</preporuka_benda>       
+  </user>
+  
+  <user name="spudek">
+    <preporuka_benda>TV on the Radio</preporuka_benda>
+	<preporuka_benda>The Walkmen</preporuka_benda>
+	<preporuka_benda>Damien Rice</preporuka_benda>
+	<preporuka_benda>Cold War Kids</preporuka_benda>
+	<preporuka_benda>Bell X1</preporuka_benda>
+	<preporuka_benda>Noah and the Whale</preporuka_benda>
+	<preporuka_benda>The Hold Steady</preporuka_benda>
+	<preporuka_benda>Emmy the Great</preporuka_benda>
+	<preporuka_benda>The Boy Least Likely To</preporuka_benda>
+	<preporuka_benda>Bon Iver</preporuka_benda>
+	<preporuka_benda>Laura Marling</preporuka_benda>
+	<preporuka_benda>Mark Geary</preporuka_benda>
+	<preporuka_benda>Urban &amp; 4</preporuka_benda>
+	<preporuka_benda>Paul Simon</preporuka_benda>
+	<preporuka_benda>White Rabbits</preporuka_benda>
+	<preporuka_benda>Aerodrom</preporuka_benda>
+	<preporuka_benda>Indexi</preporuka_benda>
+	<preporuka_benda>Wolf Parade</preporuka_benda>
+	<preporuka_benda>Vashti Bunyan</preporuka_benda>
+	<preporuka_benda>Clap Your Hands Say Yeah</preporuka_benda>
+	<preporuka_benda>Mumford &amp; Sons</preporuka_benda>
+	<preporuka_benda>Svadbas</preporuka_benda>
+	<preporuka_benda>Alexi Murdoch</preporuka_benda>
+	<preporuka_benda>Los Campesinos!</preporuka_benda>
+	<preporuka_benda>Juniper</preporuka_benda>
+	<preporuka_benda>Električni Orgazam</preporuka_benda>
+	<preporuka_benda>Ray LaMontagne</preporuka_benda>
+	<preporuka_benda>Jay Jay Pistolet</preporuka_benda>
+	<preporuka_benda>Angel's Breath</preporuka_benda>
+	<preporuka_benda>Boy Kill Boy</preporuka_benda>       
+  </user>
 
+  <user name="teophillious">
+    <preporuka_benda>Azra</preporuka_benda>
+	<preporuka_benda>Prljavo Kazalište</preporuka_benda>
+	<preporuka_benda>Psihomodo Pop</preporuka_benda>
+	<preporuka_benda>Let 3</preporuka_benda>
+	<preporuka_benda>Bajaga</preporuka_benda>
+	<preporuka_benda>Majke</preporuka_benda>
+	<preporuka_benda>Bijelo Dugme</preporuka_benda>
+	<preporuka_benda>Indexi</preporuka_benda>
+	<preporuka_benda>Divlje Jagode</preporuka_benda>
+	<preporuka_benda>Đubrivo</preporuka_benda>
+	<preporuka_benda>Plavi Orkestar</preporuka_benda>
+	<preporuka_benda>Laufer</preporuka_benda>
+	<preporuka_benda>Galija</preporuka_benda>
+	<preporuka_benda>Black Sabbath</preporuka_benda>
+	<preporuka_benda>Belfast Food</preporuka_benda>
+	<preporuka_benda>Riblja Čorba</preporuka_benda>
+	<preporuka_benda>Zdravko Colic</preporuka_benda>
+	<preporuka_benda>Led Zeppelin</preporuka_benda>
+	<preporuka_benda>Rainbow</preporuka_benda>
+	<preporuka_benda>Atomsko Sklonište</preporuka_benda>
+	<preporuka_benda>AC/DC</preporuka_benda>
+	<preporuka_benda>Dino Dvornik</preporuka_benda>
+	<preporuka_benda>KUD Idijoti</preporuka_benda>
+	<preporuka_benda>Jura Stublić &amp; Film</preporuka_benda>
+	<preporuka_benda>Jinx</preporuka_benda>
+	<preporuka_benda>Van Gogh</preporuka_benda>
+	<preporuka_benda>Darko Rundek</preporuka_benda>
+	<preporuka_benda>Vatra</preporuka_benda>
+	<preporuka_benda>Aerosmith</preporuka_benda>
+	<preporuka_benda>Neno Belan</preporuka_benda>     
+  </user>
+  
+  <user name="maligrbin">
+    <preporuka_benda>Bajaga</preporuka_benda>
+	<preporuka_benda>Riblja Corba</preporuka_benda>
+	<preporuka_benda>Indexi</preporuka_benda>
+	<preporuka_benda>Riblja Čorba</preporuka_benda>
+	<preporuka_benda>Galija</preporuka_benda>
+	<preporuka_benda>Dino Dvornik</preporuka_benda>
+	<preporuka_benda>Letu Štuke</preporuka_benda>
+	<preporuka_benda>Aerodrom</preporuka_benda>
+	<preporuka_benda>Divlje Jagode</preporuka_benda>
+	<preporuka_benda>Jura Stublić &amp; Film</preporuka_benda>
+	<preporuka_benda>Rani mraz</preporuka_benda>
+	<preporuka_benda>Neno Belan</preporuka_benda>
+	<preporuka_benda>Bajaga &amp; Instruktori</preporuka_benda>
+	<preporuka_benda>Luky</preporuka_benda>
+	<preporuka_benda>Plavi Orkestar</preporuka_benda>
+	<preporuka_benda>Psihomodo Pop</preporuka_benda>
+	<preporuka_benda>Jinx</preporuka_benda>
+	<preporuka_benda>Boris Novković</preporuka_benda>
+	<preporuka_benda>Haustor</preporuka_benda>
+	<preporuka_benda>Zdravko Colic</preporuka_benda>
+	<preporuka_benda>Atomsko Sklonište</preporuka_benda>
+	<preporuka_benda>Majke</preporuka_benda>
+	<preporuka_benda>Hari Roncevic</preporuka_benda>
+	<preporuka_benda>Vatra</preporuka_benda>
+	<preporuka_benda>Rainbow</preporuka_benda>
+	<preporuka_benda>Severina</preporuka_benda>
+	<preporuka_benda>Laufer</preporuka_benda>
+	<preporuka_benda>Neverne Bebe</preporuka_benda>
+	<preporuka_benda>Giuliano</preporuka_benda>
+	<preporuka_benda>Let 3</preporuka_benda>     
+  </user>
+  <user name="tomislavgrbin">
+    <preporuka_benda>Dino Dvornik</preporuka_benda> 
+	<preporuka_benda>Bajaga</preporuka_benda> 
+	<preporuka_benda>Neno Belan</preporuka_benda> 
+	<preporuka_benda>Luky</preporuka_benda> 
+	<preporuka_benda>Prljavo Kazalište</preporuka_benda> 
+	<preporuka_benda>Crvena Jabuka</preporuka_benda> 
+	<preporuka_benda>Severina</preporuka_benda> 
+	<preporuka_benda>Hari Roncevic</preporuka_benda> 
+	<preporuka_benda>Galija</preporuka_benda> 
+	<preporuka_benda>Mišo Kovač</preporuka_benda> 
+	<preporuka_benda>Giuliano</preporuka_benda> 
+	<preporuka_benda>Magazin</preporuka_benda> 
+	<preporuka_benda>Boris Novković</preporuka_benda> 
+	<preporuka_benda>Riblja Čorba</preporuka_benda>
+	<preporuka_benda>Let 3</preporuka_benda> 
+	<preporuka_benda>Aerodrom</preporuka_benda> 
+	<preporuka_benda>EKV</preporuka_benda> 
+	<preporuka_benda>Etta James</preporuka_benda> 
+	<preporuka_benda>Psihomodo Pop</preporuka_benda> 
+	<preporuka_benda>Idoli</preporuka_benda> 
+	<preporuka_benda>Vatra</preporuka_benda> 
+	<preporuka_benda>Jura Stublić &amp; Film</preporuka_benda> 
+	<preporuka_benda>Novi Fosili</preporuka_benda> 
+	<preporuka_benda>Divlje Jagode</preporuka_benda> 
+	<preporuka_benda>Rainbow</preporuka_benda> 
+	<preporuka_benda>Melody Gardot</preporuka_benda> 
+	<preporuka_benda>Cream</preporuka_benda> 
+	<preporuka_benda>Paul Simon</preporuka_benda> 	 	
+  </user>
+  
+</lastfm_preporuke>
