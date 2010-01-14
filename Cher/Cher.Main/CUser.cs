@@ -16,7 +16,6 @@ namespace Cher.Main
         private List<CArtist> artists;
         private Dictionary<string, long> artistNumListens;
         private long totalNumListens;
-        private List<CTrack> tracks;
         private List<CUser> neighbours;
 
         public CUser(int userID, int userIndex, string userName, string url)
@@ -29,7 +28,6 @@ namespace Cher.Main
             artists = new List<CArtist>();
             artistNumListens = new Dictionary<string, long>();
             totalNumListens = 0;
-            tracks = new List<CTrack>();
         }
 
         public void AddArtist(CArtist newArtist, int numListens)
@@ -43,14 +41,9 @@ namespace Cher.Main
             }
         }
 
-        public void AddTrack(CTrack newTrack)
+        public decimal GetArtistScore(string artist)
         {
-            tracks.Add(newTrack);
-        }
-
-        public long GetArtistScore(string artist)
-        {
-            return artistNumListens[artist] * MaxListens / totalNumListens;
+            return (decimal)artistNumListens[artist] / totalNumListens;
         }
 
         public List<CUser> Neighbours
@@ -145,7 +138,6 @@ namespace Cher.Main
                                        select si.Key).ToList();
                 return suggs;
             }
-
         }
     }
 }

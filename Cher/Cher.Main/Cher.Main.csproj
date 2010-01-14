@@ -52,15 +52,7 @@
     <Compile Include="CArtist.cs" />
     <Compile Include="CArtistScore.cs" />
     <Compile Include="CherFactory.cs" />
-    <Compile Include="CTag.cs" />
-    <Compile Include="CTrack.cs" />
     <Compile Include="CUser.cs" />
-    <Compile Include="CherForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CherForm.Designer.cs">
-      <DependentUpon>CherForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Evaluator.cs" />
     <Compile Include="LFMXMLReader.cs" />
     <Compile Include="MainForm.cs">
@@ -71,9 +63,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CherForm.resx">
-      <DependentUpon>CherForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,9 +70,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -100,12 +86,6 @@
     </Compile>
     <Compile Include="Results.cs" />
     <Compile Include="SimilarityMatrix.cs" />
-    <Compile Include="TestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cher.DataLoad\Cher.DataLoad.csproj">

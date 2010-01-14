@@ -44,7 +44,7 @@ namespace Cher.Main
 
                 for (int j = 0; j < lastFMovePreporuke.Count; ++j)
                 {
-                    CArtist artist = new CArtist(0, 0, lastFMovePreporuke[j], null, null);
+                    CArtist artist = new CArtist(0, 0, lastFMovePreporuke[j]);
                     if (cherovePreporuke.Contains(artist))
                     {
                         ++thisTruePositives;
