@@ -294,15 +294,28 @@ namespace Cher.DataLoad
 
         private int GetArtistIDByName(string artistName)
         {
-            artistName = artistName.Replace("'", "¯");
-            string cmdTextUser = "select artistID from [CherDB].[dbo].[Artist] where artistname = '" + artistName + "';";
-            SqlCommand userCommand = new SqlCommand(cmdTextUser, conn);
-            conn.Open();
-            SqlDataReader reader = userCommand.ExecuteReader();
-            reader.Read();
-            int artistID = Convert.ToInt32(reader[0]);
-            conn.Close();
+            int artistID;
+            try
+            {
+                artistName = artistName.Replace("'", "¯");
+                //if (artistName == "Ivana_Brkic")
+                //    artistName = "Ivana Brkic";
+                string cmdTextUser = "select artistID from [CherDB].[dbo].[Artist] where artistname = '" + artistName + "';";
+                SqlCommand userCommand = new SqlCommand(cmdTextUser, conn);
 
+                conn.Open();
+                SqlDataReader reader = userCommand.ExecuteReader();
+                reader.Read();
+                artistID = Convert.ToInt32(reader[0]);
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            finally
+            {
+                conn.Close();
+            }
             return artistID;
         }
 
@@ -870,12 +883,12 @@ namespace Cher.DataLoad
             TopArtist[] topArtists;
             try
             {
-                topArtists = oneUser.GetTopArtists();
+                topArtists = oneUser.GetTopArtists(Period.ThreeMonths);
             }
             catch (Exception ex)
             {
                 if (ex.Message == "InvalidParameters: No user with that name")  return "korisnika nema na last.fmu";
-                topArtists = oneUser.GetTopArtists();
+                topArtists = oneUser.GetTopArtists(Period.ThreeMonths);
             }
             
             InsertUser(oneUser);
@@ -967,7 +980,9 @@ namespace Cher.DataLoad
 
         public void InsertFromXML()
         {
-            string file = "lastfm_29.xml";
+            //string file = "lastfm_29.xml";
+            string file = "lastfm_35.xml";
+            
             XDocument xfm = XDocument.Load(file);
 
             var xmlUsers = from u in xfm.Descendants("user")
