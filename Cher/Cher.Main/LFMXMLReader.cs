@@ -13,7 +13,8 @@ namespace Cher.Main
         {
             List<XUser> xusers = new List<XUser>();
 
-            XDocument xfm = XDocument.Load("lastfm_29.xml");
+            //XDocument xfm = XDocument.Load("lastfm_29.xml");
+            XDocument xfm = XDocument.Load("lastfm_35.xml");
 
             var xmlUsers = from u in xfm.Descendants("user")
                            select u;

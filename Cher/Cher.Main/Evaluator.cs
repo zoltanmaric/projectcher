@@ -34,8 +34,8 @@ namespace Cher.Main
                 List<CArtist> cherovePreporuke = recommendedArtistsCher[i];
                 List<string> lastFMovePreporuke = recommendedArtistsLastFM[i];
                 
-                if (cherovePreporuke.Count != lastFMovePreporuke.Count)
-                    return null;
+                //if (cherovePreporuke.Count != lastFMovePreporuke.Count)
+                //    return null;
 
                 // Za jednog korisnika
                 int thisTruePositives = 0;
@@ -45,16 +45,18 @@ namespace Cher.Main
                 for (int j = 0; j < lastFMovePreporuke.Count; ++j)
                 {
                     CArtist artist = new CArtist(0, 0, lastFMovePreporuke[j]);
-                    if (cherovePreporuke.Contains(artist))
+                    //if (cherovePreporuke.Contains(artist))
+                    if (cherovePreporuke.Where(cp => cp.ArtistName == artist.ArtistName).Any())
                     {
                         ++thisTruePositives;
                     }
                     else
                     {
                         ++thisFalseNegatives;
-                    }
-                    thisFalsePositives = cherovePreporuke.Count - thisTruePositives;
+                    }                    
                 }
+                thisFalsePositives = cherovePreporuke.Count - thisTruePositives;
+                
                 // Sad imamo sve TP, FP i FN za jednog korisnika.
 
                 double thisPrecision = (double)thisTruePositives /(thisTruePositives+thisFalsePositives); // jel ovo dobro casta sve u double?
@@ -73,7 +75,7 @@ namespace Cher.Main
             }
 
             // Gotove makro-usrednjene vrijednosti
-            double macroAveragedPrecision = sumPrecision / users.Count;
+                double macroAveragedPrecision = sumPrecision / users.Count;
             double macroAveragedRecall = sumRecall / users.Count;
             double macroAveragedF1 = sumF1 / users.Count;
 

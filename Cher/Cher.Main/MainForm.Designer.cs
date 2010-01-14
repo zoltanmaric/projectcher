@@ -62,6 +62,7 @@
             this.txtWk = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.lblDBLoadStatus = new System.Windows.Forms.Label();
+            this.btnEval = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -362,11 +363,22 @@
             this.lblDBLoadStatus.Size = new System.Drawing.Size(0, 13);
             this.lblDBLoadStatus.TabIndex = 19;
             // 
+            // btnEval
+            // 
+            this.btnEval.Location = new System.Drawing.Point(425, 458);
+            this.btnEval.Name = "btnEval";
+            this.btnEval.Size = new System.Drawing.Size(75, 23);
+            this.btnEval.TabIndex = 20;
+            this.btnEval.Text = "Eval";
+            this.btnEval.UseVisualStyleBackColor = true;
+            this.btnEval.Click += new System.EventHandler(this.btnEval_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 568);
+            this.Controls.Add(this.btnEval);
             this.Controls.Add(this.lblDBLoadStatus);
             this.Controls.Add(this.txtWe);
             this.Controls.Add(this.label13);
@@ -432,5 +444,6 @@
         private System.Windows.Forms.TextBox txtWk;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lblDBLoadStatus;
+        private System.Windows.Forms.Button btnEval;
     }
 }
