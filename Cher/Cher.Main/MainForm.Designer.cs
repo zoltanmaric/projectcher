@@ -189,7 +189,7 @@
             // lblEvaluation
             // 
             this.lblEvaluation.AutoSize = true;
-            this.lblEvaluation.Location = new System.Drawing.Point(91, 10);
+            this.lblEvaluation.Location = new System.Drawing.Point(82, 6);
             this.lblEvaluation.Name = "lblEvaluation";
             this.lblEvaluation.Size = new System.Drawing.Size(35, 13);
             this.lblEvaluation.TabIndex = 13;
@@ -212,15 +212,15 @@
             this.panel1.Controls.Add(this.txtMacroPrecision);
             this.panel1.Controls.Add(this.lblEvaluation);
             this.panel1.Controls.Add(this.txtMacroF1);
-            this.panel1.Location = new System.Drawing.Point(561, 432);
+            this.panel1.Location = new System.Drawing.Point(435, 432);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(338, 120);
+            this.panel1.Size = new System.Drawing.Size(464, 120);
             this.panel1.TabIndex = 14;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(193, 91);
+            this.label11.Location = new System.Drawing.Point(275, 90);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(48, 13);
             this.label11.TabIndex = 28;
@@ -229,7 +229,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(193, 65);
+            this.label12.Location = new System.Drawing.Point(257, 61);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 13);
             this.label12.TabIndex = 29;
@@ -237,22 +237,22 @@
             // 
             // txtMicroF1
             // 
-            this.txtMicroF1.Location = new System.Drawing.Point(289, 88);
+            this.txtMicroF1.Location = new System.Drawing.Point(329, 87);
             this.txtMicroF1.Name = "txtMicroF1";
-            this.txtMicroF1.Size = new System.Drawing.Size(35, 20);
+            this.txtMicroF1.Size = new System.Drawing.Size(130, 20);
             this.txtMicroF1.TabIndex = 27;
             // 
             // txtMicroRecall
             // 
-            this.txtMicroRecall.Location = new System.Drawing.Point(289, 58);
+            this.txtMicroRecall.Location = new System.Drawing.Point(329, 58);
             this.txtMicroRecall.Name = "txtMicroRecall";
-            this.txtMicroRecall.Size = new System.Drawing.Size(35, 20);
+            this.txtMicroRecall.Size = new System.Drawing.Size(130, 20);
             this.txtMicroRecall.TabIndex = 26;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(193, 35);
+            this.label9.Location = new System.Drawing.Point(244, 28);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 13);
             this.label9.TabIndex = 25;
@@ -260,15 +260,15 @@
             // 
             // txtMicroPrecision
             // 
-            this.txtMicroPrecision.Location = new System.Drawing.Point(289, 32);
+            this.txtMicroPrecision.Location = new System.Drawing.Point(329, 25);
             this.txtMicroPrecision.Name = "txtMicroPrecision";
-            this.txtMicroPrecision.Size = new System.Drawing.Size(35, 20);
+            this.txtMicroPrecision.Size = new System.Drawing.Size(130, 20);
             this.txtMicroPrecision.TabIndex = 24;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 68);
+            this.label10.Location = new System.Drawing.Point(13, 61);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 13);
             this.label10.TabIndex = 19;
@@ -276,15 +276,15 @@
             // 
             // txtMacroRecall
             // 
-            this.txtMacroRecall.Location = new System.Drawing.Point(109, 61);
+            this.txtMacroRecall.Location = new System.Drawing.Point(102, 58);
             this.txtMacroRecall.Name = "txtMacroRecall";
-            this.txtMacroRecall.Size = new System.Drawing.Size(35, 20);
+            this.txtMacroRecall.Size = new System.Drawing.Size(116, 20);
             this.txtMacroRecall.TabIndex = 16;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 38);
+            this.label8.Location = new System.Drawing.Point(13, 28);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 13);
             this.label8.TabIndex = 15;
@@ -303,7 +303,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 10);
+            this.label6.Location = new System.Drawing.Point(3, 6);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 14;
@@ -311,16 +311,16 @@
             // 
             // txtMacroPrecision
             // 
-            this.txtMacroPrecision.Location = new System.Drawing.Point(109, 35);
+            this.txtMacroPrecision.Location = new System.Drawing.Point(102, 25);
             this.txtMacroPrecision.Name = "txtMacroPrecision";
-            this.txtMacroPrecision.Size = new System.Drawing.Size(35, 20);
+            this.txtMacroPrecision.Size = new System.Drawing.Size(116, 20);
             this.txtMacroPrecision.TabIndex = 12;
             // 
             // txtMacroF1
             // 
-            this.txtMacroF1.Location = new System.Drawing.Point(109, 87);
+            this.txtMacroF1.Location = new System.Drawing.Point(102, 87);
             this.txtMacroF1.Name = "txtMacroF1";
-            this.txtMacroF1.Size = new System.Drawing.Size(35, 20);
+            this.txtMacroF1.Size = new System.Drawing.Size(116, 20);
             this.txtMacroF1.TabIndex = 10;
             // 
             // txtWe
@@ -365,7 +365,7 @@
             // 
             // btnEval
             // 
-            this.btnEval.Location = new System.Drawing.Point(425, 458);
+            this.btnEval.Location = new System.Drawing.Point(344, 487);
             this.btnEval.Name = "btnEval";
             this.btnEval.Size = new System.Drawing.Size(75, 23);
             this.btnEval.TabIndex = 20;
