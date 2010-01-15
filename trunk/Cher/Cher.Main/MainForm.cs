@@ -176,7 +176,7 @@ namespace Cher.Main
             foreach (CUser user in cFriendUsers)
             {
                 user.FindNeighbours(sm, users, int.Parse(txtNeighSize.Text));
-                List<CArtist> suggs = user.Suggestions(30, decimal.Parse(txtWk.Text), decimal.Parse(txtWe.Text));
+                List<CArtist> suggs = user.Suggestions(int.Parse(txtArtistSize.Text), decimal.Parse(txtWk.Text), decimal.Parse(txtWe.Text));
 
                 XUser xuser = (from xu in xusers
                                where xu.UserName == user.UserName
