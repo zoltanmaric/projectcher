@@ -86,6 +86,7 @@
     </Compile>
     <Compile Include="Results.cs" />
     <Compile Include="SimilarityMatrix.cs" />
+    <Compile Include="XUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cher.DataLoad\Cher.DataLoad.csproj">
